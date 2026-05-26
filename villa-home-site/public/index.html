@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Villa Home — Luxury Joglo Villa in Bali</title>
+<meta name="description" content="Villa Home — a private luxury joglo villa in Kerobokan, Bali. Three bedroom suites, a large pool and an open-air living pavilion set within 1,200 m² of tropical garden." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --cream:#F6F1E7;
+  --sand:#EDE4D3;
+  --ink:#2A2620;
+  --ink-soft:#5b5248;
+  --clay:#B06A4F;
+  --clay-dark:#94583F;
+  --bronze:#9A7B4F;
+  --olive:#5E6B52;
+  --gold:#C2A263;
+  --line:rgba(42,38,32,.14);
+  --shadow:0 24px 60px -28px rgba(42,38,32,.45);
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.7;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.1;letter-spacing:.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-family:'Jost',sans-serif;font-weight:500;font-size:.72rem;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--clay);
+}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:'Jost',sans-serif;font-weight:400;font-size:.82rem;
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:1rem 1.9rem;border-radius:50px;cursor:pointer;border:1px solid transparent;
+  transition:.35s ease;white-space:nowrap;
+}
+.btn-solid{background:var(--clay);color:#fff}
+.btn-solid:hover{background:var(--clay-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.btn-dark{background:var(--ink);color:var(--cream)}
+.btn-dark:hover{background:#000;transform:translateY(-2px)}
+.btn-outline{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--cream)}
+
+/* ---------- NAV ---------- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 2.4rem;transition:.4s ease;
+}
+header.nav.scrolled{
+  background:rgba(246,241,231,.92);backdrop-filter:blur(10px);
+  padding:.9rem 2.4rem;box-shadow:0 6px 30px -20px rgba(0,0,0,.4);
+}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:.28em;
+  text-transform:uppercase;color:#fff;transition:.4s}
+.brand small{display:block;font-family:'Jost';font-size:.52rem;letter-spacing:.5em;
+  text-align:center;font-weight:400;opacity:.85;margin-top:2px}
+header.scrolled .brand{color:var(--ink)}
+.navlinks{display:flex;align-items:center;gap:2.2rem}
+.navlinks a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;
+  opacity:.92;transition:.3s;position:relative}
+.navlinks a:not(.navbtn):after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+  background:currentColor;transition:.3s}
+.navlinks a:not(.navbtn):hover:after{width:100%}
+header.scrolled .navlinks a{color:var(--ink)}
+.navbtn{border:1px solid rgba(255,255,255,.6);padding:.6rem 1.25rem;border-radius:50px}
+header.scrolled .navbtn{border-color:var(--ink)}
+.navbtn:hover{background:var(--clay);border-color:var(--clay)!important;color:#fff!important}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:6px}
+.menu-toggle span{width:26px;height:2px;background:#fff;transition:.3s}
+header.scrolled .menu-toggle span{background:var(--ink)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;
+  justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('/images/hero-twilight.jpg') center/cover no-repeat;
+  transform:scale(1.05);animation:zoom 18s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(20,16,12,.45) 0%,rgba(20,16,12,.18) 35%,rgba(20,16,12,.62) 100%)}
+.hero-inner{position:relative;z-index:2;padding:0 22px;max-width:880px}
+.hero .eyebrow{color:#f3e4cf}
+.hero h1{font-size:clamp(3rem,9vw,6.8rem);font-weight:500;margin:.6rem 0 .4rem;
+  text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero .tag{font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:400;opacity:.95;margin-bottom:1.8rem}
+.hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:1.4rem 2.4rem;margin:1.7rem 0 2.2rem;
+  font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.hero-stats span{display:flex;align-items:center;gap:.55rem;opacity:.95}
+.hero-stats span:not(:last-child):after{content:"";width:5px;height:5px;border-radius:50%;
+  background:var(--gold);margin-left:1.6rem}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;
+  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;opacity:.8;display:flex;
+  flex-direction:column;align-items:center;gap:8px}
+.scroll-hint .line{width:1px;height:42px;background:linear-gradient(#fff,transparent);
+  animation:drop 2s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}
+  51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- SECTION BASICS ---------- */
+section{position:relative}
+.pad{padding:clamp(5rem,9vw,8.5rem) 0}
+.center{text-align:center;max-width:760px;margin:0 auto}
+.section-title{font-size:clamp(2.2rem,5vw,3.6rem);margin:.7rem 0 1rem}
+.lead{font-size:1.08rem;color:var(--ink-soft);font-weight:300}
+.divider{width:54px;height:1px;background:var(--gold);margin:1.4rem auto}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- INTRO / STORY ---------- */
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.story-text .section-title{margin-top:.6rem}
+.story-text p{color:var(--ink-soft);margin-bottom:1.1rem}
+.story-media{position:relative}
+.story-media img{width:100%;height:560px;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
+.story-media .badge{position:absolute;bottom:-26px;left:-26px;background:var(--cream);
+  border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.6rem;text-align:center;
+  box-shadow:var(--shadow)}
+.story-media .badge .n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--clay);line-height:1}
+.story-media .badge .l{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ---------- HIGHLIGHTS ---------- */
+.highlights{background:var(--sand)}
+.hl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-top:3.2rem}
+.hl-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);
+  padding:2.2rem 1.6rem;text-align:center;transition:.4s}
+.hl-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.hl-icon{width:52px;height:52px;margin:0 auto 1.1rem;color:var(--clay)}
+.hl-card h3{font-size:1.55rem;margin-bottom:.3rem}
+.hl-card p{font-size:.92rem;color:var(--ink-soft)}
+
+/* ---------- SPACES ---------- */
+.space-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+  margin-bottom:clamp(3.5rem,7vw,6.5rem)}
+.space-row:last-child{margin-bottom:0}
+.space-row.rev .space-img{order:2}
+.space-img img{width:100%;height:520px;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
+.space-copy .eyebrow{color:var(--olive)}
+.space-copy h3{font-size:clamp(1.9rem,3.6vw,2.8rem);margin:.5rem 0 1rem}
+.space-copy p{color:var(--ink-soft);margin-bottom:1rem}
+.space-copy ul{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem}
+.space-copy li{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:50px;padding:.45rem 1rem;color:var(--ink-soft)}
+
+/* ---------- GALLERY ---------- */
+.gallery{background:var(--ink);color:var(--cream)}
+.gallery .eyebrow{color:var(--gold)}
+.gallery .lead{color:rgba(246,241,231,.7)}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;margin-top:3rem}
+.g-grid figure{overflow:hidden;border-radius:10px;cursor:pointer;position:relative}
+.g-grid img{width:100%;height:100%;object-fit:cover;transition:.7s ease}
+.g-grid figure:hover img{transform:scale(1.08)}
+.g-grid figure:after{content:"";position:absolute;inset:0;background:rgba(42,38,32,.12);opacity:0;transition:.3s}
+.g-grid figure:hover:after{opacity:1}
+.tall{grid-row:span 2}
+.wide{grid-column:span 2}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:120;background:rgba(18,14,10,.94);display:none;
+  align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:90vw;max-height:84vh;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb .x,.lb .nav-arrow{position:absolute;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+  width:52px;height:52px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;transition:.3s}
+.lb .x:hover,.lb .nav-arrow:hover{background:rgba(255,255,255,.25)}
+.lb .x{top:26px;right:26px}
+.lb .prev{left:26px;top:50%;transform:translateY(-50%)}
+.lb .next{right:26px;top:50%;transform:translateY(-50%)}
+.lb .count{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#fff;
+  font-size:.8rem;letter-spacing:.2em}
+
+/* ---------- BOOKING / AVAILABILITY ---------- */
+.booking{background:var(--sand)}
+.book-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,4vw,3.4rem);
+  margin-top:3rem;align-items:start}
+.cal-card,.quote-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);
+  padding:1.8rem;box-shadow:var(--shadow)}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem}
+.cal-head h4{font-size:1.5rem}
+.cal-nav{display:flex;gap:.5rem}
+.cal-nav button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+  background:transparent;cursor:pointer;font-size:1rem;transition:.3s;color:var(--ink)}
+.cal-nav button:hover{background:var(--clay);color:#fff;border-color:var(--clay)}
+.cal-months{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:620px){.cal-months{grid-template-columns:1fr}}
+.month-label{text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:.6rem}
+.dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:6px}
+.dow span{text-align:center;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.85rem;
+  border-radius:9px;cursor:pointer;transition:.18s;position:relative;color:var(--ink)}
+.day.empty{cursor:default}
+.day.avail:hover{background:rgba(176,106,79,.16)}
+.day.past,.day.booked{color:#bcae9a;cursor:not-allowed;text-decoration:line-through}
+.day.booked{background:repeating-linear-gradient(45deg,rgba(176,106,79,.07),rgba(176,106,79,.07) 4px,transparent 4px,transparent 8px)}
+.day.sel{background:var(--clay);color:#fff}
+.day.inrange{background:rgba(176,106,79,.2)}
+.day.sel.start{border-radius:9px 0 0 9px}
+.day.sel.end{border-radius:0 9px 9px 0}
+.legend{display:flex;gap:1.3rem;flex-wrap:wrap;margin-top:1.3rem;font-size:.72rem;color:var(--ink-soft)}
+.legend i{display:inline-block;width:13px;height:13px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+.legend .l-av{background:rgba(176,106,79,.18)}
+.legend .l-bk{background:repeating-linear-gradient(45deg,rgba(176,106,79,.18),rgba(176,106,79,.18) 3px,transparent 3px,transparent 6px);border:1px solid var(--line)}
+.legend .l-sl{background:var(--clay)}
+
+.quote-card h4{font-size:1.6rem;margin-bottom:.3rem}
+.quote-sub{font-size:.82rem;color:var(--ink-soft);margin-bottom:1.3rem}
+.q-row{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.q-row .lbl{color:var(--ink-soft)}
+.q-dates{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1rem}
+.q-date{border:1px solid var(--line);border-radius:10px;padding:.7rem .9rem}
+.q-date small{display:block;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.q-date b{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500}
+.guests-row{display:flex;align-items:center;justify-content:space-between;margin:1rem 0;font-size:.92rem}
+.stepper{display:flex;align-items:center;gap:.9rem}
+.stepper button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;
+  cursor:pointer;font-size:1.1rem;color:var(--ink);transition:.3s}
+.stepper button:hover{background:var(--ink);color:var(--cream)}
+.q-total{display:flex;justify-content:space-between;align-items:center;margin:1rem 0 1.3rem;
+  font-family:'Cormorant Garamond',serif}
+.q-total .t-lbl{font-size:1.1rem}
+.q-total .t-val{font-size:2rem;color:var(--clay)}
+.quote-card .btn{width:100%;justify-content:center;margin-bottom:.7rem}
+.note{font-size:.74rem;color:var(--ink-soft);text-align:center}
+.sync-pill{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--olive);margin-top:1rem}
+.sync-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--olive);
+  box-shadow:0 0 0 0 rgba(94,107,82,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(94,107,82,.5)}70%{box-shadow:0 0 0 8px rgba(94,107,82,0)}100%{box-shadow:0 0 0 0 rgba(94,107,82,0)}}
+
+/* ---------- AMENITIES ---------- */
+.am-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem 2.6rem;margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto}
+.am-grid div{display:flex;align-items:center;gap:.85rem;font-size:.95rem;color:var(--ink-soft);
+  padding:.6rem 0;border-bottom:1px solid var(--line)}
+.am-grid svg{width:22px;height:22px;color:var(--clay);flex:none}
+
+/* ---------- LOCATION ---------- */
+.location{background:var(--ink);color:var(--cream)}
+.location .eyebrow{color:var(--gold)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-top:2.5rem}
+.loc-copy p{color:rgba(246,241,231,.72);margin-bottom:1rem}
+.loc-list{margin-top:1.6rem;display:grid;gap:.7rem}
+.loc-list div{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12);padding:.6rem 0;font-size:.92rem}
+.loc-list span:last-child{color:var(--gold)}
+.map-frame{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);height:420px;border:1px solid rgba(255,255,255,.1)}
+.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(.2) contrast(1.05)}
+
+/* ---------- INQUIRE ---------- */
+.inquire{background:url('/images/garden-lounge.jpg') center/cover fixed no-repeat;position:relative}
+.inquire:before{content:"";position:absolute;inset:0;background:rgba(28,22,16,.72)}
+.inq-card{position:relative;z-index:2;background:var(--cream);border-radius:var(--r);max-width:720px;
+  margin:0 auto;padding:clamp(2rem,5vw,3.4rem);box-shadow:var(--shadow)}
+.inq-card .center{margin-bottom:2rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field.full{grid-column:1/-1}
+.field label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.field input,.field textarea{font-family:'Jost';font-size:.95rem;padding:.85rem 1rem;border:1px solid var(--line);
+  border-radius:10px;background:#fff;color:var(--ink);transition:.3s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--clay);box-shadow:0 0 0 3px rgba(176,106,79,.12)}
+.field textarea{resize:vertical;min-height:110px}
+.inq-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.6rem}
+.inq-actions .btn{flex:1;justify-content:center;min-width:200px}
+
+/* ---------- FOOTER ---------- */
+footer{background:#221e18;color:rgba(246,241,231,.7);padding:3.4rem 0 2rem}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;
+  padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-size:1.8rem;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--cream)}
+.foot-brand small{display:block;font-family:'Jost';font-size:.56rem;letter-spacing:.4em;margin-top:4px}
+.foot-links{display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.foot-links a:hover{color:var(--gold)}
+.foot-contact{font-size:.9rem;line-height:2}
+.foot-contact a:hover{color:var(--gold)}
+.foot-bottom{text-align:center;font-size:.74rem;letter-spacing:.08em;margin-top:1.8rem;opacity:.6}
+
+/* floating whatsapp */
+.fab{position:fixed;bottom:24px;right:24px;z-index:80;width:60px;height:60px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);
+  transition:.3s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:32px;height:32px;fill:#fff}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .hl-grid{grid-template-columns:repeat(2,1fr)}
+  .g-grid{grid-template-columns:repeat(2,1fr)}
+  .book-grid{grid-template-columns:1fr}
+  .am-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  .navlinks{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:var(--cream);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:1.6rem;padding:3rem;
+    transform:translateX(100%);transition:.4s;box-shadow:var(--shadow)}
+  .navlinks.show{transform:none}
+  .navlinks a{color:var(--ink)!important;font-size:1rem}
+  .navbtn{border-color:var(--ink)!important}
+  .menu-toggle{display:flex;z-index:70}
+  .story,.space-row,.space-row.rev,.loc-grid{grid-template-columns:1fr}
+  .space-row.rev .space-img{order:0}
+  .story-media .badge{left:50%;transform:translateX(-50%)}
+  .form-grid{grid-template-columns:1fr}
+  .foot-top{flex-direction:column}
+}
+@media(max-width:560px){
+  .hl-grid,.am-grid{grid-template-columns:1fr}
+  .g-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .q-dates{grid-template-columns:1fr}
+  .wrap{padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand">Villa&nbsp;Home<small>Bali</small></a>
+  <nav class="navlinks" id="navlinks">
+    <a href="#story">The Villa</a>
+    <a href="#spaces">Spaces</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#booking">Availability</a>
+    <a href="#location">Location</a>
+    <a href="#inquire" class="navbtn">Inquire</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Kerobokan · Bali</p>
+    <h1>Villa Home</h1>
+    <p class="tag">A private joglo sanctuary wrapped in tropical garden</p>
+    <div class="hero-stats" id="heroStats">
+      <span>3 Bedrooms</span>
+      <span>Sleeps 6</span>
+      <span>1,200 m² Grounds</span>
+      <span>Private Pool</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn btn-solid">Check Availability</a>
+      <a href="#story" class="btn btn-ghost">Discover the Villa</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="line"></span>Scroll</div>
+</section>
+
+<!-- STORY -->
+<section class="pad" id="story">
+  <div class="wrap story">
+    <div class="story-text reveal">
+      <p class="eyebrow">The Villa</p>
+      <h2 class="section-title">Where teakwood and<br/>jungle breathe together</h2>
+      <p>Set behind quiet garden walls in Kerobokan, Villa Home is a tribute to traditional Balinese craftsmanship — a hand-built joglo of aged teak, soaring alang-alang roofs and open pavilions that dissolve the line between inside and out.</p>
+      <p>Days drift between the long emerald pool, shaded daybeds and a vast open-air living space carved with antique detail. Spread across 1,200 m² of tropical garden, the villa offers complete privacy for a family or group of friends, yet sits minutes from Seminyak's beaches, dining and boutiques.</p>
+      <p>This is Bali the way it was meant to be felt — barefoot, unhurried, and quietly luxurious.</p>
+      <a href="#booking" class="btn btn-outline" style="margin-top:.6rem">View Available Dates</a>
+    </div>
+    <div class="story-media reveal">
+      <img src="/images/joglo-pool.jpg" alt="Joglo living pavilion opening onto the pool" />
+      <div class="badge">
+        <div class="n">1,200</div>
+        <div class="l">m² of garden</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="pad highlights">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">At a glance</p>
+      <h2 class="section-title">Crafted for slow, luxurious days</h2>
+      <div class="divider"></div>
+      <p class="lead">Every corner of Villa Home is designed around space, light and the sound of water.</p>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card reveal">
+        <svg class="hl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 20h20M4 20v-8l8-6 8 6v8M9 20v-5h6v5"/></svg>
+        <h3>Joglo Living</h3>
+        <p>A grand open-air pavilion of carved teak and soaring thatched roof.</p>
+      </div>
+      <div class="hl-card reveal">
+        <svg class="hl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 16c2 0 2-1.5 4-1.5S8 16 10 16s2-1.5 4-1.5S16 16 18 16s2-1.5 4-1.5M2 20c2 0 2-1.5 4-1.5S8 20 10 20s2-1.5 4-1.5S16 20 18 20s2-1.5 4-1.5M5 11l7-5 7 5"/></svg>
+        <h3>Large Pool</h3>
+        <p>A long private pool framed by sun loungers and garden greenery.</p>
+      </div>
+      <div class="hl-card reveal">
+        <svg class="hl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2C8 6 8 9 12 13c4-4 4-7 0-11zM5 14c0 4 3 7 7 7s7-3 7-7c-2 0-4 1-7 1s-5-1-7-1z"/></svg>
+        <h3>1,200 m² Garden</h3>
+        <p>Expansive tropical grounds with lawns, palms and quiet corners.</p>
+      </div>
+      <div class="hl-card reveal">
+        <svg class="hl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21v-9a3 3 0 013-3h12a3 3 0 013 3v9M3 13h18M7 9V5a2 2 0 012-2h6a2 2 0 012 2v4"/></svg>
+        <h3>3 Bedroom Suites</h3>
+        <p>Three serene en-suite bedrooms, comfortably sleeping up to six.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACES -->
+<section class="pad" id="spaces">
+  <div class="wrap">
+    <div class="center reveal" style="margin-bottom:3.4rem">
+      <p class="eyebrow">The Spaces</p>
+      <h2 class="section-title">Room to breathe, indoors and out</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="space-row reveal">
+      <div class="space-img"><img src="/images/joglo-living.jpg" alt="Open-air joglo living lounge" /></div>
+      <div class="space-copy">
+        <p class="eyebrow">The Heart</p>
+        <h3>The Joglo Living Pavilion</h3>
+        <p>The soul of the villa — a vast open-sided joglo with hand-carved ceilings, deep daybeds and lounge seating that opens straight onto the pool and garden. The perfect place to gather for sundowners or stretch out with a book in the breeze.</p>
+        <ul><li>Open-air lounge</li><li>Carved teak ceiling</li><li>Garden & pool views</li></ul>
+      </div>
+    </div>
+
+    <div class="space-row rev reveal">
+      <div class="space-img"><img src="/images/pool-pavilion.jpg" alt="Private pool and pavilion in the garden" /></div>
+      <div class="space-copy">
+        <p class="eyebrow">Outdoors</p>
+        <h3>Pool & Tropical Garden</h3>
+        <p>A long, sun-drenched pool sits at the centre of 1,200 m² of lush garden, edged with loungers, a shaded bale and a relaxed outdoor lounge beneath a Balinese parasol. Space to swim, sunbathe and disappear into green.</p>
+        <ul><li>Large private pool</li><li>Sun loungers</li><li>Garden lounge & bale</li></ul>
+      </div>
+    </div>
+
+    <div class="space-row reveal">
+      <div class="space-img"><img src="/images/bedroom-poolview.jpg" alt="Bedroom suite with pool view" /></div>
+      <div class="space-copy">
+        <p class="eyebrow">Rest</p>
+        <h3>Three Bedroom Suites</h3>
+        <p>Three air-conditioned bedrooms blend antique Balinese doors and artwork with crisp linens and ensuite bathrooms. One opens directly to the pool, another frames the garden through full-height glass — each its own private retreat.</p>
+        <ul><li>En-suite bathrooms</li><li>Air-conditioned</li><li>Sleeps up to 6</li></ul>
+      </div>
+    </div>
+
+    <div class="space-row rev reveal">
+      <div class="space-img"><img src="/images/kitchen.jpg" alt="Open-air kitchen and dining" /></div>
+      <div class="space-copy">
+        <p class="eyebrow">Gather</p>
+        <h3>Open-Air Kitchen & Dining</h3>
+        <p>A fully equipped open kitchen with a generous timber island flows into the living pavilion — made for long, leisurely meals, morning coffee in the garden air and evenings spent together under the joglo roof.</p>
+        <ul><li>Full kitchen</li><li>Timber island</li><li>Indoor-outdoor dining</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="pad gallery" id="gallery">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Gallery</p>
+      <h2 class="section-title">A closer look</h2>
+      <div class="divider"></div>
+      <p class="lead">Tap any image to view full screen.</p>
+    </div>
+    <div class="g-grid" id="gGrid"><!-- filled by JS --></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="x" id="lbX">&times;</button>
+  <button class="nav-arrow prev" id="lbPrev">&#8249;</button>
+  <img id="lbImg" src="" alt="" />
+  <button class="nav-arrow next" id="lbNext">&#8250;</button>
+  <div class="count" id="lbCount"></div>
+</div>
+
+<!-- BOOKING -->
+<section class="pad booking" id="booking">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Availability & Booking</p>
+      <h2 class="section-title">Find your dates</h2>
+      <div class="divider"></div>
+      <p class="lead">Live availability synced from our calendar. Select your check-in and check-out, then send us a request — we'll confirm personally, with no booking fees.</p>
+    </div>
+
+    <div class="book-grid">
+      <!-- calendar -->
+      <div class="cal-card reveal">
+        <div class="cal-head">
+          <h4>Select your stay</h4>
+          <div class="cal-nav">
+            <button id="prevM" aria-label="Previous month">&#8249;</button>
+            <button id="nextM" aria-label="Next month">&#8250;</button>
+          </div>
+        </div>
+        <div class="cal-months" id="calMonths"></div>
+        <div class="legend">
+          <span><i class="l-av"></i>Available</span>
+          <span><i class="l-bk"></i>Booked</span>
+          <span><i class="l-sl"></i>Your selection</span>
+        </div>
+        <div class="sync-pill" id="syncPill"><span class="dot"></span><span id="syncText">Loading live availability…</span></div>
+      </div>
+
+      <!-- quote -->
+      <div class="quote-card reveal">
+        <h4>Your stay</h4>
+        <p class="quote-sub">Estimate — final quote confirmed on request</p>
+        <div class="q-dates">
+          <div class="q-date"><small>Check in</small><b id="ciLbl">—</b></div>
+          <div class="q-date"><small>Check out</small><b id="coLbl">—</b></div>
+        </div>
+        <div class="guests-row">
+          <span>Guests</span>
+          <div class="stepper">
+            <button id="gMinus" aria-label="Fewer guests">−</button>
+            <b id="gCount">2</b>
+            <button id="gPlus" aria-label="More guests">+</button>
+          </div>
+        </div>
+        <div class="q-row"><span class="lbl" id="rateLbl">Nightly rate</span><span id="rateVal">—</span></div>
+        <div class="q-row" id="nightsRow" style="display:none"><span class="lbl"><span id="nightsCount">0</span> nights</span><span id="nightsVal">—</span></div>
+        <div class="q-row" id="cleanRow" style="display:none"><span class="lbl">Cleaning fee</span><span id="cleanVal">—</span></div>
+        <div class="q-total">
+          <span class="t-lbl">Estimated total</span>
+          <span class="t-val" id="totalVal">—</span>
+        </div>
+        <button class="btn btn-solid" id="reqWhats">Request via WhatsApp</button>
+        <button class="btn btn-outline" id="reqEmail">Request via Email</button>
+        <p class="note" id="bookNote">Select your dates to see an estimate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="pad" id="amenities">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Comforts</p>
+      <h2 class="section-title">Everything taken care of</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="am-grid reveal" id="amGrid"></div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="pad location" id="location">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Location</p>
+      <h2 class="section-title">Kerobokan, Bali</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-copy reveal">
+        <p>Villa Home sits in leafy Kerobokan — the calm, garden-filled heart between Seminyak and Canggu. You're tucked away in tropical quiet, yet only a short drive from Bali's best beaches, beach clubs, restaurants and surf.</p>
+        <div class="loc-list">
+          <div><span>Seminyak Beach</span><span>~10 min drive</span></div>
+          <div><span>Canggu / Echo Beach</span><span>~15 min drive</span></div>
+          <div><span>Restaurants & cafés</span><span>Minutes away</span></div>
+          <div><span>Ngurah Rai Airport</span><span>~30 min drive</span></div>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Kerobokan,Bali,Indonesia&z=13&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRE -->
+<section class="pad inquire" id="inquire">
+  <div class="wrap">
+    <div class="inq-card reveal">
+      <div class="center">
+        <p class="eyebrow">Inquire</p>
+        <h2 class="section-title">Plan your stay</h2>
+        <p class="lead">Send us your dates and we'll get back to you personally — usually within a few hours.</p>
+      </div>
+      <div class="form-grid">
+        <div class="field"><label>Full name</label><input type="text" id="fName" placeholder="Your name" /></div>
+        <div class="field"><label>Email</label><input type="email" id="fEmail" placeholder="you@email.com" /></div>
+        <div class="field"><label>Check in</label><input type="date" id="fCheckin" /></div>
+        <div class="field"><label>Check out</label><input type="date" id="fCheckout" /></div>
+        <div class="field"><label>Guests</label><input type="number" id="fGuests" min="1" value="2" /></div>
+        <div class="field"><label>Phone / WhatsApp</label><input type="text" id="fPhone" placeholder="+…" /></div>
+        <div class="field full"><label>Message</label><textarea id="fMsg" placeholder="Tell us a little about your trip…"></textarea></div>
+      </div>
+      <div class="inq-actions">
+        <button class="btn btn-solid" id="sendWhats">Send via WhatsApp</button>
+        <button class="btn btn-dark" id="sendEmail">Send via Email</button>
+        <a class="btn btn-outline" id="airbnbBtn" href="#" target="_blank" rel="noopener" style="display:none">View on Airbnb</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">Villa Home<small>Kerobokan · Bali</small></div>
+      </div>
+      <div class="foot-links">
+        <a href="#story">The Villa</a>
+        <a href="#spaces">Spaces</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Availability</a>
+        <a href="#inquire">Inquire</a>
+      </div>
+      <div class="foot-contact" id="footContact"></div>
+    </div>
+    <div class="foot-bottom">© <span id="yr"></span> Villa Home Bali · Book direct, no fees · Crafted with care</div>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.2 1.1 1.1-4-.3-.4c-1-1.6-1.6-3.5-1.6-5.4C5.5 9.8 10.2 5.2 16 5.2S26.5 9.8 26.5 15.5 21.8 25.7 16 25.7zm5.8-7.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.9-.9-3.1-1.7-4.4-3.8-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.1 2.2.9 3 1 4.1.9.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+
+let CONFIG = { nightlyRate:350, currency:'usd', cleaningFee:0, minNights:2, maxGuests:6,
+  bedrooms:3, bathrooms:3, whatsappNumber:'', contactEmail:'', airbnbUrl:'', villaName:'Villa Home' };
+let BOOKED = new Set();
+let CI = null, CO = null, GUESTS = 2;
+let viewDate = new Date(); viewDate.setDate(1);
+
+const CUR = {usd:'$',eur:'€',aud:'A$',gbp:'£',idr:'Rp ',sgd:'S$'};
+const money = n => (CUR[CONFIG.currency]||'$') + Math.round(n).toLocaleString();
+const iso = d => d.toISOString().split('T')[0];
+const fmtNice = d => d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+
+/* ---------- gallery ---------- */
+const PHOTOS = [
+  {src:'hero-twilight.jpg', alt:'Villa Home at twilight', cls:'wide tall'},
+  {src:'joglo-living.jpg', alt:'Open-air joglo living lounge', cls:'tall'},
+  {src:'living-pool.jpg', alt:'Living pavilion looking onto the pool', cls:''},
+  {src:'pool-pavilion.jpg', alt:'Pool and garden pavilion', cls:''},
+  {src:'kitchen.jpg', alt:'Open-air kitchen', cls:'wide'},
+  {src:'bedroom-poolview.jpg', alt:'Bedroom with pool view', cls:''},
+  {src:'garden-lounge.jpg', alt:'Garden lounge with Balinese parasol', cls:''},
+  {src:'bedroom-1.jpg', alt:'Bedroom suite', cls:''},
+  {src:'pool-daybed.jpg', alt:'Poolside daybed', cls:'wide'},
+  {src:'bedroom-garden.jpg', alt:'Bedroom opening to the garden', cls:''},
+  {src:'bathroom.jpg', alt:'Open-air ensuite bathroom', cls:''},
+  {src:'bedroom-antique.jpg', alt:'Bedroom with antique Balinese door', cls:''},
+  {src:'joglo-pool.jpg', alt:'Joglo pavilion and pool', cls:'wide'}
+];
+function buildGallery(){
+  const g = $('#gGrid');
+  g.innerHTML = PHOTOS.map((p,i)=>`<figure data-i="${i}" class="${p.cls}"><img src="/images/${p.src}" alt="${p.alt}" loading="lazy"/></figure>`).join('');
+  $$('#gGrid figure').forEach(f=>f.addEventListener('click',()=>openLb(+f.dataset.i)));
+}
+let lbI = 0;
+function openLb(i){ lbI=i; $('#lbImg').src='/images/'+PHOTOS[i].src; $('#lbImg').alt=PHOTOS[i].alt;
+  $('#lbCount').textContent=(i+1)+' / '+PHOTOS.length; $('#lb').classList.add('open'); }
+function moveLb(d){ lbI=(lbI+d+PHOTOS.length)%PHOTOS.length; openLb(lbI); }
+$('#lbX').onclick=()=>$('#lb').classList.remove('open');
+$('#lbPrev').onclick=()=>moveLb(-1);
+$('#lbNext').onclick=()=>moveLb(1);
+$('#lb').addEventListener('click',e=>{if(e.target.id==='lb')$('#lb').classList.remove('open')});
+document.addEventListener('keydown',e=>{ if(!$('#lb').classList.contains('open'))return;
+  if(e.key==='Escape')$('#lb').classList.remove('open'); if(e.key==='ArrowLeft')moveLb(-1); if(e.key==='ArrowRight')moveLb(1); });
+
+/* ---------- amenities ---------- */
+const AMEN = [
+  'Private swimming pool','Open-air joglo living','Fully equipped kitchen','Air-conditioned bedrooms',
+  'High-speed Wi-Fi','En-suite bathrooms','Tropical garden & loungers','Daily housekeeping',
+  'Smart TV & sound','Outdoor dining & bale','Secure private parking','Airport transfer on request'
+];
+function buildAmen(){
+  const check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>';
+  $('#amGrid').innerHTML = AMEN.map(a=>`<div>${check}<span>${a}</span></div>`).join('');
+}
+
+/* ---------- calendar ---------- */
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const today = new Date(); today.setHours(0,0,0,0);
+
+function renderCalendar(){
+  const host = $('#calMonths'); host.innerHTML='';
+  for(let m=0;m<2;m++){
+    const d = new Date(viewDate.getFullYear(), viewDate.getMonth()+m, 1);
+    host.appendChild(monthEl(d));
+  }
+}
+function monthEl(first){
+  const wrap=document.createElement('div');
+  const y=first.getFullYear(), mo=first.getMonth();
+  const lbl=document.createElement('div'); lbl.className='month-label';
+  lbl.textContent=MONTHS[mo]+' '+y; wrap.appendChild(lbl);
+  const dow=document.createElement('div'); dow.className='dow';
+  dow.innerHTML=['S','M','T','W','T','F','S'].map(d=>`<span>${d}</span>`).join(''); wrap.appendChild(dow);
+  const days=document.createElement('div'); days.className='days';
+  const start=new Date(y,mo,1).getDay();
+  const total=new Date(y,mo+1,0).getDate();
+  for(let i=0;i<start;i++){const e=document.createElement('div');e.className='day empty';days.appendChild(e);}
+  for(let dnum=1;dnum<=total;dnum++){
+    const cell=document.createElement('div'); cell.className='day'; cell.textContent=dnum;
+    const cur=new Date(y,mo,dnum); cur.setHours(0,0,0,0);
+    const key=iso(cur);
+    if(cur<today){cell.classList.add('past');}
+    else if(BOOKED.has(key)){cell.classList.add('booked');}
+    else{
+      cell.classList.add('avail');
+      cell.addEventListener('click',()=>pickDate(cur));
+    }
+    // selection styling
+    if(CI&&iso(cur)===iso(CI)){cell.classList.add('sel','start');}
+    if(CO&&iso(cur)===iso(CO)){cell.classList.add('sel','end');}
+    if(CI&&CO&&cur>CI&&cur<CO){cell.classList.add('inrange');}
+    days.appendChild(cell);
+  }
+  wrap.appendChild(days); return wrap;
+}
+function rangeHasBooked(a,b){
+  const c=new Date(a); c.setDate(c.getDate()+1);
+  while(c<b){ if(BOOKED.has(iso(c)))return true; c.setDate(c.getDate()+1);} return false;
+}
+function pickDate(d){
+  if(!CI||(CI&&CO)){ CI=d; CO=null; }
+  else if(d<=CI){ CI=d; CO=null; }
+  else {
+    if(rangeHasBooked(CI,d)){ CI=d; CO=null; }   // can't span a booked night
+    else { CO=d; }
+  }
+  renderCalendar(); updateQuote();
+}
+function updateQuote(){
+  $('#ciLbl').textContent = CI?fmtNice(CI):'—';
+  $('#coLbl').textContent = CO?fmtNice(CO):'—';
+  $('#rateVal').textContent = money(CONFIG.nightlyRate)+' / night';
+  $('#rateLbl').textContent = 'Nightly rate';
+  if(CI&&CO){
+    const nights=Math.round((CO-CI)/86400000);
+    const sub=nights*CONFIG.nightlyRate;
+    const clean=CONFIG.cleaningFee||0;
+    $('#nightsRow').style.display='flex';
+    $('#nightsCount').textContent=nights;
+    $('#nightsVal').textContent=money(sub);
+    if(clean){ $('#cleanRow').style.display='flex'; $('#cleanVal').textContent=money(clean);} else {$('#cleanRow').style.display='none';}
+    $('#totalVal').textContent=money(sub+clean);
+    if(nights<CONFIG.minNights){
+      $('#bookNote').innerHTML=`<span style="color:var(--clay-dark)">Minimum stay is ${CONFIG.minNights} nights.</span>`;
+    } else {
+      $('#bookNote').textContent='No fees. We confirm your booking personally.';
+    }
+    // sync inquiry form fields
+    $('#fCheckin').value=iso(CI); $('#fCheckout').value=iso(CO);
+  } else {
+    $('#nightsRow').style.display='none'; $('#cleanRow').style.display='none';
+    $('#totalVal').textContent='—';
+    $('#bookNote').textContent= CI ? 'Now choose your check-out date.' : 'Select your dates to see an estimate.';
+  }
+}
+
+/* steppers */
+$('#gPlus').onclick=()=>{GUESTS=Math.min(CONFIG.maxGuests,GUESTS+1);$('#gCount').textContent=GUESTS;$('#fGuests').value=GUESTS;};
+$('#gMinus').onclick=()=>{GUESTS=Math.max(1,GUESTS-1);$('#gCount').textContent=GUESTS;$('#fGuests').value=GUESTS;};
+
+/* month nav */
+$('#prevM').onclick=()=>{ const min=new Date(today.getFullYear(),today.getMonth(),1);
+  const nv=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1); if(nv>=min){viewDate=nv;renderCalendar();} };
+$('#nextM').onclick=()=>{ viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1); renderCalendar(); };
+
+/* ---------- requests ---------- */
+function buildMsg(){
+  const lines=[`Hello! I'd love to book ${CONFIG.villaName}.`,''];
+  if(CI&&CO){ const nights=Math.round((CO-CI)/86400000);
+    lines.push(`Check-in: ${fmtNice(CI)}`,`Check-out: ${fmtNice(CO)}`,`Nights: ${nights}`); }
+  lines.push(`Guests: ${GUESTS}`);
+  if(CI&&CO){ const nights=Math.round((CO-CI)/86400000);
+    const total=nights*CONFIG.nightlyRate+(CONFIG.cleaningFee||0);
+    lines.push(`Estimated total: ${money(total)}`); }
+  return lines.join('\n');
+}
+function waLink(text){
+  const num=(CONFIG.whatsappNumber||'').replace(/[^0-9]/g,'');
+  return `https://wa.me/${num}?text=${encodeURIComponent(text)}`;
+}
+function mailLink(text,subject){
+  return `mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+}
+function guard(){
+  if(!CI||!CO){ alert('Please select your check-in and check-out dates first.'); return false; }
+  const nights=Math.round((CO-CI)/86400000);
+  if(nights<CONFIG.minNights){ alert('Minimum stay is '+CONFIG.minNights+' nights.'); return false; }
+  return true;
+}
+$('#reqWhats').onclick=()=>{ if(!guard())return; window.open(waLink(buildMsg()),'_blank'); };
+$('#reqEmail').onclick=()=>{ if(!guard())return; window.location.href=mailLink(buildMsg(),`Booking request — ${CONFIG.villaName}`); };
+
+/* inquiry form */
+function formMsg(){
+  const n=$('#fName').value||'(no name)', e=$('#fEmail').value||'', ph=$('#fPhone').value||'';
+  const ci=$('#fCheckin').value, co=$('#fCheckout').value, g=$('#fGuests').value||GUESTS, m=$('#fMsg').value||'';
+  return [`Booking inquiry — ${CONFIG.villaName}`,'',`Name: ${n}`,`Email: ${e}`,`Phone: ${ph}`,
+    `Check-in: ${ci||'—'}`,`Check-out: ${co||'—'}`,`Guests: ${g}`,'',`Message: ${m}`].join('\n');
+}
+$('#sendWhats').onclick=()=>window.open(waLink(formMsg()),'_blank');
+$('#sendEmail').onclick=()=>window.location.href=mailLink(formMsg(),`Booking inquiry — ${CONFIG.villaName}`);
+
+/* ---------- data load ---------- */
+async function load(){
+  try{
+    const c=await fetch('/api/config').then(r=>r.json());
+    CONFIG={...CONFIG,...c};
+  }catch(e){ console.warn('config load failed',e); }
+  // apply config
+  GUESTS=Math.min(CONFIG.maxGuests,2)||2; $('#gCount').textContent=GUESTS; $('#fGuests').value=GUESTS; $('#fGuests').max=CONFIG.maxGuests;
+  $('#heroStats').innerHTML=[`${CONFIG.bedrooms} Bedrooms`,`Sleeps ${CONFIG.maxGuests}`,`${CONFIG.landSize||'1,200 m²'} Grounds`,`Private Pool`].map(s=>`<span>${s}</span>`).join('');
+  // contacts
+  if(CONFIG.whatsappNumber){ $('#fab').href=waLink('Hi! I have a question about '+CONFIG.villaName); } else { $('#fab').style.display='none'; }
+  const fc=$('#footContact'); fc.innerHTML='';
+  if(CONFIG.whatsappNumber) fc.innerHTML+=`<div><a href="${waLink('Hi! Question about '+CONFIG.villaName)}" target="_blank">WhatsApp: ${CONFIG.whatsappNumber}</a></div>`;
+  if(CONFIG.contactEmail) fc.innerHTML+=`<div><a href="mailto:${CONFIG.contactEmail}">${CONFIG.contactEmail}</a></div>`;
+  if(CONFIG.airbnbUrl){ const a=$('#airbnbBtn'); a.href=CONFIG.airbnbUrl; a.style.display='inline-flex'; }
+
+  updateQuote();
+
+  // availability
+  try{
+    const av=await fetch('/api/availability').then(r=>r.json());
+    BOOKED=new Set(av.bookedDates||[]);
+    if(av.configured===false){
+      $('#syncText').textContent='Live calendar not yet connected';
+      $('#syncPill').style.color='var(--clay-dark)';
+      $('#syncPill').querySelector('.dot').style.background='var(--clay-dark)';
+    }else{
+      $('#syncText').textContent='Live availability · synced with Airbnb';
+    }
+  }catch(e){ $('#syncText').textContent='Availability unavailable right now'; }
+  renderCalendar();
+}
+
+/* ---------- nav + reveal ---------- */
+const nav=$('#nav');
+window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',window.scrollY>60); });
+$('#menuToggle').onclick=()=>$('#navlinks').classList.toggle('show');
+$$('#navlinks a').forEach(a=>a.onclick=()=>$('#navlinks').classList.remove('show'));
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+$('#yr').textContent=new Date().getFullYear();
+
+buildGallery(); buildAmen(); renderCalendar(); load();
+</script>
+</body>
+</html>

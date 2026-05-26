@@ -88,20 +88,22 @@ header.scrolled .navbtn{border-color:var(--ink)}
 header.scrolled .menu-toggle span{background:var(--ink)}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;
+.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:stretch;
   justify-content:center;text-align:center;color:#fff;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('/images/living-pool.jpg') center/cover no-repeat;
   transform:scale(1.05);animation:zoom 18s ease-out forwards}
 @keyframes zoom{to{transform:scale(1)}}
 .hero:after{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(15,12,8,.55) 0%,rgba(15,12,8,.45) 45%,rgba(15,12,8,.72) 100%)}
-.hero-inner{position:relative;z-index:2;padding:0 22px;max-width:880px;
+.hero-inner{position:relative;z-index:2;padding:14vh 22px 14vh;max-width:880px;width:100%;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:center;
   text-shadow:0 2px 14px rgba(0,0,0,.55)}
 .hero .eyebrow{color:#f3e4cf}
 .hero h1{font-size:clamp(3rem,9vw,6.8rem);font-weight:500;margin:.6rem 0 .4rem;
   text-shadow:0 2px 30px rgba(0,0,0,.35)}
-.hero .tag{font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:clamp(1.2rem,2.4vw,1.7rem);font-weight:400;opacity:.95;margin-bottom:1.8rem}
+.hero .tag{font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.05rem,1.9vw,1.45rem);font-weight:400;line-height:1.45;letter-spacing:.08em;opacity:.96;
+  margin-bottom:2.2rem;max-width:660px;margin-left:auto;margin-right:auto}
 .hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:1.4rem 2.4rem;margin:1.7rem 0 2.2rem;
   font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
 .hero-stats span{display:flex;align-items:center;gap:.55rem;opacity:.95}
@@ -353,18 +355,9 @@ footer{background:#221e18;color:rgba(246,241,231,.7);padding:3.4rem 0 2rem}
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <p class="eyebrow">Batu Belig · Bali</p>
-    <h1>Villa Home</h1>
-    <p class="tag">A private joglo sanctuary wrapped in tropical garden</p>
-    <div class="hero-stats" id="heroStats">
-      <span>3 Bedrooms</span>
-      <span>Steps to the Beach</span>
-      <span>1,200 m² Grounds</span>
-      <span>Private Pool</span>
-    </div>
+    <p class="tag">A private joglo sanctuary wrapped in tropical garden, with steps to the beach</p>
     <div class="hero-cta">
-      <a href="#booking" class="btn btn-solid">Check Availability</a>
-      <a href="#story" class="btn btn-ghost">Discover the Villa</a>
+      <a href="#booking" class="btn btn-ghost">Check Availability</a>
     </div>
   </div>
   <div class="scroll-hint"><span class="line"></span>Scroll</div>
@@ -819,7 +812,6 @@ async function load(){
   }catch(e){ console.warn('config load failed',e); }
   // apply config
   GUESTS=Math.min(CONFIG.maxGuests,2)||2; $('#gCount').textContent=GUESTS; $('#fGuests').value=GUESTS; $('#fGuests').max=CONFIG.maxGuests;
-  $('#heroStats').innerHTML=[`${CONFIG.bedrooms} Bedrooms`,`Steps to the Beach`,`${CONFIG.landSize||'1,200 m²'} Grounds`,`Private Pool`].map(s=>`<span>${s}</span>`).join('');
   // contacts
   if(CONFIG.whatsappNumber){ $('#fab').href=waLink('Hi! I have a question about '+CONFIG.villaName); } else { $('#fab').style.display='none'; }
   const fc=$('#footContact'); fc.innerHTML='';

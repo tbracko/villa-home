@@ -95,27 +95,22 @@ header.scrolled .menu-toggle span{background:var(--ink)}
 @keyframes zoom{to{transform:scale(1)}}
 .hero:after{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(15,12,8,.55) 0%,rgba(15,12,8,.45) 45%,rgba(15,12,8,.72) 100%)}
-.hero-inner{position:relative;z-index:2;padding:14vh 22px 14vh;max-width:880px;width:100%;
-  display:flex;flex-direction:column;justify-content:space-between;align-items:center;
+.hero-inner{position:relative;z-index:2;padding:0 22px 6vh;max-width:880px;width:100%;
+  display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3rem;
   text-shadow:0 2px 14px rgba(0,0,0,.55)}
 .hero .eyebrow{color:#f3e4cf}
 .hero h1{font-size:clamp(3rem,9vw,6.8rem);font-weight:500;margin:.6rem 0 .4rem;
   text-shadow:0 2px 30px rgba(0,0,0,.35)}
-.hero .tag{font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.05rem,1.9vw,1.45rem);font-weight:400;line-height:1.45;letter-spacing:.08em;
-  display:inline-block;background:rgba(15,12,8,.45);
-  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
-  border:1px solid rgba(255,255,255,.12);padding:.85rem 1.6rem;border-radius:18px;
-  text-shadow:none;max-width:min(660px,90vw);margin:0 auto 2.2rem}
+.hero .tag{font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:clamp(.72rem,1.3vw,.88rem);letter-spacing:.34em;text-transform:uppercase;
+  opacity:.88;line-height:1.5;margin:0}
 .hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:1.4rem 2.4rem;margin:1.7rem 0 2.2rem;
   font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
 .hero-stats span{display:flex;align-items:center;gap:.55rem;opacity:.95}
 .hero-stats span:not(:last-child):after{content:"";width:5px;height:5px;border-radius:50%;
   background:var(--gold);margin-left:1.6rem}
 .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;
-  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;opacity:.8;display:flex;
-  flex-direction:column;align-items:center;gap:8px}
+.scroll-hint{display:none}
 .scroll-hint .line{width:1px;height:42px;background:linear-gradient(#fff,transparent);
   animation:drop 2s infinite}
 @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}
@@ -358,10 +353,10 @@ footer{background:#221e18;color:rgba(246,241,231,.7);padding:3.4rem 0 2rem}
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <p class="tag">A private joglo sanctuary wrapped in tropical garden, with steps to the beach</p>
     <div class="hero-cta">
       <a href="#booking" class="btn btn-ghost">Check Availability</a>
     </div>
+    <p class="tag">A private joglo sanctuary · steps to the beach</p>
   </div>
   <div class="scroll-hint"><span class="line"></span>Scroll</div>
 </section>

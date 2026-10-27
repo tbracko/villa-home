@@ -143,6 +143,35 @@ section{position:relative}
 .intro .sig{margin-top:3.2rem;font-family:'Jost',sans-serif;font-weight:300;font-size:.7rem;
   letter-spacing:.42em;text-transform:uppercase;color:var(--ink-mute)}
 
+/* ---------- RATING STRIP ---------- */
+.rating-strip{background:var(--ink);color:var(--bg);padding:2.4rem 0}
+.rs-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:1.6rem;align-items:center;text-align:center}
+.rs-grid .n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold);line-height:1.05}
+.rs-grid .n .st{font-size:1.4rem;margin-left:.3rem}
+.rs-grid .l{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;opacity:.78;margin-top:.45rem}
+.rs-grid .fav{border:1px solid rgba(194,162,99,.45);padding:1rem 1.2rem}
+.rs-grid .fav .n{font-size:1.5rem;font-style:italic}
+
+/* ---------- REVIEWS ---------- */
+.reviews{background:var(--bg)}
+.rv-feature{max-width:900px;margin:3.2rem auto 0;text-align:center}
+.rv-feature .stars{color:var(--gold);letter-spacing:.35em;font-size:.95rem}
+.rv-feature blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.6rem,3.4vw,2.5rem);
+  line-height:1.35;color:var(--ink);margin:1.2rem 0 1.3rem}
+.rv-feature cite{font-style:normal;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-mute)}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:4rem}
+.rv{background:var(--cream);border:1px solid var(--line);padding:2.2rem 2rem;position:relative;display:flex;flex-direction:column}
+.rv:before{content:"\201C";position:absolute;top:.5rem;left:1.3rem;font-family:'Cormorant Garamond',serif;font-size:4.2rem;
+  line-height:1;color:rgba(184,106,77,.22)}
+.rv .stars{color:var(--gold);letter-spacing:.25em;font-size:.8rem}
+.rv p{font-family:'Cormorant Garamond',serif;font-size:1.13rem;line-height:1.7;color:var(--ink);margin:.9rem 0 1.4rem;flex:1}
+.rv .who{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-mute)}
+.rv .who b{color:var(--ink);font-weight:500;margin-right:.5rem}
+.rv-foot{text-align:center;margin-top:3rem}
+.rv-foot small{display:block;margin-top:1rem;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)}
+@media(max-width:980px){.rv-grid{grid-template-columns:1fr 1fr}.rs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.rv-grid{grid-template-columns:1fr}}
+
 /* ---------- STORY (2 col) ---------- */
 .story{background:var(--bg-soft)}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
@@ -347,6 +376,7 @@ footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
   <a href="#top" class="brand">Villa&nbsp;Home<small>Batu&nbsp;Belig · Bali</small></a>
   <nav class="navlinks" id="navlinks">
     <a href="#story">Story</a>
+    <a href="#reviews">Reviews</a>
     <a href="#spaces">Spaces</a>
     <a href="#gallery">Gallery</a>
     <a href="#booking">Stay</a>
@@ -369,6 +399,16 @@ footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
       <a href="#booking" class="btn btn-ghost">Check Availability</a>
       <p class="hero-tag">An intimate joglo sanctuary,<br/>moments from the sea.</p>
     </div>
+  </div>
+</section>
+
+<!-- RATING STRIP -->
+<section class="rating-strip">
+  <div class="wrap rs-grid">
+    <div class="fav"><div class="n">Guest Favourite</div><div class="l">on Airbnb</div></div>
+    <div><div class="n">4.94<span class="st">★</span></div><div class="l">from 151 reviews</div></div>
+    <div><div class="n">95%</div><div class="l">five-star stays</div></div>
+    <div><div class="n">5.0</div><div class="l">cleanliness · check-in · communication</div></div>
   </div>
 </section>
 
@@ -398,6 +438,50 @@ footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
         <p>This is Bali the way it was meant to be felt — barefoot, unhurried, quietly luxurious.</p>
         <a href="#booking" class="btn btn-outline" style="margin-top:1.2rem">View Available Dates</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="pad reviews" id="reviews">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Guest Reviews</p>
+      <h2 class="section-title">In our guests' words</h2>
+      <span class="divider"></span>
+      <p class="lead">Rated 4.94 from 151 stays on Airbnb, and one of its Guest Favourite homes.</p>
+    </div>
+
+    <div class="rv-feature reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>“Words cannot do this incredible villa justice. If you're reading this, do yourself a favour and just book it! Best villa I've stayed at in Bali.”</blockquote>
+      <cite>Alana · June 2026</cite>
+    </div>
+
+    <div class="rv-grid">
+      <div class="rv reveal"><div class="stars">★★★★★</div>
+        <p>The property itself is stunning, meticulously maintained, and offers the perfect mix of traditional Balinese charm and modern comfort… Waking up and stepping right out to the wonderful pool for a morning dip became our favorite daily routine.</p>
+        <div class="who"><b>Ajay</b>July 2026</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div>
+        <p>Beautiful and peaceful surroundings, amazingly appointed separate ensuite bedrooms… We also had private chefs cooking us breakfast and dinner — the meals were amazing, best I have ever had!</p>
+        <div class="who"><b>Simona</b>September 2026</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div>
+        <p>Enormous pool, excellent double sun loungers, a fish pond, and perfect gardens — this villa is a must! … And sunset down on Batu Belig beach is not to be missed!</p>
+        <div class="who"><b>Teegan</b>September 2026</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div>
+        <p>Somehow this place is even better than the photos — easily one of the best places my family and I have ever stayed.</p>
+        <div class="who"><b>Brittany</b>July 2023</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div>
+        <p>What truly set this experience apart was the incredible service from Indhy and her team… Their hospitality and attention to detail made our stay truly special and stress-free.</p>
+        <div class="who"><b>Mayukh</b>June 2026</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div>
+        <p>The open plan design of the main lounge, kitchen and pool area is beautiful — you feel like you are in your own little private tropical oasis.</p>
+        <div class="who"><b>Claire</b>October 2023</div></div>
+    </div>
+
+    <div class="rv-foot reveal">
+      <a href="https://www.airbnb.com/rooms/9251415" target="_blank" rel="noopener" class="btn btn-outline">Read all 151 reviews on Airbnb</a>
+      <small>Reviews quoted from Airbnb · rating as of October 2026</small>
     </div>
   </div>
 </section>

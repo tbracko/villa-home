@@ -162,6 +162,10 @@ footer a{color:var(--gold)}
 .fab{position:fixed;bottom:22px;right:22px;z-index:80;width:46px;height:46px;border-radius:50%;
   background:#07C160;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.45);
   color:#fff;font-size:.8rem;letter-spacing:.05em}
+.toast{position:fixed;left:50%;bottom:86px;transform:translate(-50%,20px);z-index:90;background:rgba(31,27,20,.92);color:#fff;
+  font-size:.86rem;padding:.8rem 1.2rem;max-width:88vw;text-align:center;line-height:1.6;opacity:0;pointer-events:none;transition:.35s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.qr.pulse{box-shadow:0 0 0 4px rgba(7,193,96,.55);transition:box-shadow .4s}
 
 @media(max-width:980px){
   .why-grid{grid-template-columns:1fr 1fr}
@@ -395,7 +399,8 @@ footer a{color:var(--gold)}
   </div>
 </footer>
 
-<a class="fab" href="#book" aria-label="微信咨询">微信</a>
+<a class="fab" href="#book" id="fabWx" aria-label="微信咨询">微信</a>
+<div class="toast" id="toast"></div>
 
 <script>
 /* ===== Edit these two values ===== */
@@ -406,11 +411,27 @@ const $=s=>document.querySelector(s);
 const wa='https://wa.me/'+WHATSAPP.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent('您好，我想咨询 Villa Home 的入住日期。');
 $('#waBtn').href=wa;
 $('#wxId').textContent = WECHAT_ID ? '微信号：'+WECHAT_ID : '微信号即将更新';
-$('#copyWx').onclick=async()=>{
-  if(!WECHAT_ID){ $('#copied').textContent='请扫描二维码添加'; return; }
-  try{ await navigator.clipboard.writeText(WECHAT_ID); $('#copied').textContent='已复制，打开微信添加好友即可'; }
-  catch(e){ $('#copied').textContent='微信号：'+WECHAT_ID; }
-};
+/* WeChat has no public link to add a contact, so: copy the ID, then open the WeChat app.
+   Inside WeChat's own browser, jump to the QR instead — long-press it to add directly. */
+const inWeChat=/MicroMessenger/i.test(navigator.userAgent);
+const isMobile=/iPhone|iPad|Android/i.test(navigator.userAgent);
+function toast(msg,ms){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms||3500);}
+async function copyId(){ try{ await navigator.clipboard.writeText(WECHAT_ID); return true; }catch(e){
+  try{const ta=document.createElement('textarea');ta.value=WECHAT_ID;document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();return ok;}catch(_){return false;} } }
+function showQr(){ $('#qrBox').scrollIntoView({behavior:'smooth',block:'center'}); $('#qrBox').classList.add('pulse'); setTimeout(()=>$('#qrBox').classList.remove('pulse'),2500); }
+async function contactWeChat(e){
+  if(e) e.preventDefault();
+  if(inWeChat){ showQr(); toast('长按二维码，选择「识别图中二维码」即可添加',5000); return; }
+  const ok=await copyId();
+  $('#copied').textContent= ok ? '已复制微信号：'+WECHAT_ID : '微信号：'+WECHAT_ID;
+  if(isMobile){
+    toast((ok?'微信号已复制 ':'')+'正在打开微信… 在搜索栏粘贴即可添加',4500);
+    setTimeout(()=>{ location.href='weixin://'; },700);
+  } else { showQr(); toast((ok?'微信号已复制。':'')+'用手机微信扫描二维码即可添加',5000); }
+}
+$('#copyWx').textContent = isMobile && !inWeChat ? '复制微信号并打开微信' : (inWeChat ? '长按二维码添加' : '复制微信号');
+$('#copyWx').onclick=contactWeChat;
+$('#fabWx').onclick=contactWeChat;
 const nav=$('#nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
 $('#menuToggle').onclick=()=>$('#navlinks').classList.toggle('show');

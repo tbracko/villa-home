@@ -102,7 +102,7 @@ header.nav.scrolled{ padding:.75rem 2.2rem; box-shadow:0 6px 28px -22px rgba(0,0
   display:flex;align-items:stretch;justify-content:center;text-align:center;
   color:#fff;overflow:hidden}
 .hero-bg{position:absolute;inset:0;
-  background:url('images/lux-hero-pool.jpg') center/cover no-repeat;
+  background:url('lux-hero-pool.jpg') center/cover no-repeat;
   transform:scale(1.04);animation:zoom 22s ease-out forwards}
 @keyframes zoom{to{transform:scale(1)}}
 .hero:after{content:"";position:absolute;inset:0;
@@ -277,7 +277,7 @@ section{position:relative}
 .loc-copy .btn{margin-top:2rem}
 
 /* ---------- INQUIRE ---------- */
-.inquire{background:url('images/lux-story-twilight.jpg') center/cover fixed no-repeat;position:relative}
+.inquire{background:url('lux-story-twilight.jpg') center/cover fixed no-repeat;position:relative}
 .inquire:before{content:"";position:absolute;inset:0;background:rgba(31,27,20,.75)}
 .inq-card{position:relative;z-index:2;background:var(--bg);max-width:780px;
   margin:0 auto;padding:clamp(2.4rem,5vw,4rem);box-shadow:var(--shadow)}
@@ -386,7 +386,7 @@ footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
   <div class="wrap">
     <div class="story-grid">
       <div class="story-img reveal">
-        <img src="images/lux-story-twilight.jpg" alt="Villa Home at twilight, reflected in the pool" />
+        <img src="lux-story-twilight.jpg" alt="Villa Home at twilight, reflected in the pool" />
         <div class="corner"><div class="n">1,200</div><div class="l">m² of garden</div></div>
       </div>
       <div class="story-text reveal">
@@ -406,7 +406,7 @@ footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
 <section class="pad space" id="spaces">
   <div class="wrap">
     <div class="space-row reveal">
-      <div class="space-img"><img src="images/lux-pavilion.jpg" alt="Open-air joglo living pavilion with rattan sofas" /></div>
+      <div class="space-img"><img src="lux-pavilion.jpg" alt="Open-air joglo living pavilion with rattan sofas" /></div>
       <div class="space-text">
         <span class="eyebrow">The Heart</span>
         <h2>The open-air pavilion</h2>
@@ -426,7 +426,7 @@ footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
 <section class="pad space">
   <div class="wrap">
     <div class="space-row rev reveal">
-      <div class="space-img"><img src="images/lux-pool-deck.jpg" alt="Long emerald pool with teak deck and palms" /></div>
+      <div class="space-img"><img src="lux-pool-deck.jpg" alt="Long emerald pool with teak deck and palms" /></div>
       <div class="space-text">
         <span class="eyebrow">Outdoors</span>
         <h2>Pool &amp; tropical garden</h2>
@@ -446,7 +446,7 @@ footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
 <section class="pad space">
   <div class="wrap">
     <div class="space-row reveal">
-      <div class="space-img"><img src="images/lux-bedroom-poolview.jpg" alt="Bedroom suite opening to the pool" /></div>
+      <div class="space-img"><img src="lux-bedroom-poolview.jpg" alt="Bedroom suite opening to the pool" /></div>
       <div class="space-text">
         <span class="eyebrow">Rest</span>
         <h2>Three vaulted bedrooms</h2>
@@ -466,7 +466,7 @@ footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
 <section class="pad space">
   <div class="wrap">
     <div class="space-row rev reveal">
-      <div class="space-img"><img src="images/lux-bathroom-terracotta.jpg" alt="Terracotta-plastered bathroom with carved teak mirror" /></div>
+      <div class="space-img"><img src="lux-bathroom-terracotta.jpg" alt="Terracotta-plastered bathroom with carved teak mirror" /></div>
       <div class="space-text">
         <span class="eyebrow">Bathe</span>
         <h2>Terracotta sanctuaries</h2>
@@ -666,11 +666,11 @@ const PHOTOS = [
 ];
 function buildGallery(){
   const g = $('#gGrid');
-  g.innerHTML = PHOTOS.map((p,i)=>`<figure data-i="${i}" class="${p.cls}"><img src="images/${p.src}" alt="${p.alt}" loading="lazy"/></figure>`).join('');
+  g.innerHTML = PHOTOS.map((p,i)=>`<figure data-i="${i}" class="${p.cls}"><img src="${p.src}" alt="${p.alt}" loading="lazy"/></figure>`).join('');
   $$('#gGrid figure').forEach(f=>f.addEventListener('click',()=>openLb(+f.dataset.i)));
 }
 let lbI = 0;
-function openLb(i){ lbI=i; $('#lbImg').src='images/'+PHOTOS[i].src; $('#lbImg').alt=PHOTOS[i].alt;
+function openLb(i){ lbI=i; $('#lbImg').src=PHOTOS[i].src; $('#lbImg').alt=PHOTOS[i].alt;
   $('#lbCount').textContent=(i+1)+' / '+PHOTOS.length; $('#lb').classList.add('open'); }
 function moveLb(d){ lbI=(lbI+d+PHOTOS.length)%PHOTOS.length; openLb(lbI); }
 $('#lbX').onclick=()=>$('#lb').classList.remove('open');

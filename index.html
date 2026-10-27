@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Villa Home — A private joglo sanctuary in Batu Belig, Bali</title>
+<meta name="description" content="Villa Home — a private luxury joglo villa in Batu Belig, Kerobokan, Bali. Three vaulted teak bedrooms sleeping up to nine, terracotta bathrooms, an open-air pavilion and a long emerald pool, steps from the beach." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#F2EAD9;
+  --bg-soft:#ECE3CE;
+  --cream:#FAF4E5;
+  --ink:#1F1B14;
+  --ink-soft:#5A5044;
+  --ink-mute:#8A7E6B;
+  --terra:#B86A4D;
+  --terra-dk:#8C5039;
+  --honey:#8B6432;
+  --sand:#D9CCB3;
+  --bronze:#9F7E4A;
+  --gold:#C2A263;
+  --moss:#4A5A3F;
+  --line:rgba(31,27,20,.14);
+  --line-soft:rgba(31,27,20,.07);
+  --shadow:0 30px 70px -34px rgba(31,27,20,.45);
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.08;letter-spacing:.005em;color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.wrap-narrow{max-width:920px;margin:0 auto;padding:0 32px}
+.eyebrow{
+  font-family:'Jost',sans-serif;font-weight:400;font-size:.7rem;
+  letter-spacing:.42em;text-transform:uppercase;color:var(--terra);
+}
+.divider{width:54px;height:1px;background:var(--bronze);margin:1.4rem auto;display:block}
+.divider-left{margin-left:0;margin-right:0}
+.btn{
+  display:inline-flex;align-items:center;gap:.65rem;
+  font-family:'Jost',sans-serif;font-weight:300;font-size:.78rem;
+  letter-spacing:.32em;text-transform:uppercase;
+  padding:1.05rem 2.1rem;cursor:pointer;border:1px solid transparent;
+  transition:.45s cubic-bezier(.2,.7,.2,1);white-space:nowrap;border-radius:0;
+}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.btn-ink{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.btn-ink:hover{background:#000;border-color:#000}
+.btn-outline{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--cream)}
+.btn-terra{background:var(--terra);color:#fff;border-color:var(--terra)}
+.btn-terra:hover{background:var(--terra-dk);border-color:var(--terra-dk)}
+
+/* ---------- NAV ---------- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 2.2rem;transition:.4s ease;
+}
+header.nav::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:rgba(31,27,20,.18);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.04);
+  transition:background .4s ease;
+}
+header.nav.scrolled::before{ background:rgba(31,27,20,.40) }
+header.nav.scrolled{ padding:.75rem 2.2rem; box-shadow:0 6px 28px -22px rgba(0,0,0,.5) }
+.brand{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.3rem;letter-spacing:.32em;
+  text-transform:uppercase;color:#fff;transition:.4s;line-height:1}
+.brand small{display:block;font-family:'Jost';font-weight:300;font-size:.5rem;letter-spacing:.55em;
+  text-align:center;opacity:.78;margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:2.6rem}
+.navlinks a{font-family:'Jost',sans-serif;font-weight:300;font-size:.7rem;letter-spacing:.28em;
+  text-transform:uppercase;color:#fff;opacity:.88;transition:.3s;position:relative}
+.navlinks a:not(.navbtn):after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;
+  background:var(--gold);transition:.3s}
+.navlinks a:not(.navbtn):hover{opacity:1}
+.navlinks a:not(.navbtn):hover:after{width:100%}
+.navbtn{border:1px solid rgba(255,255,255,.55);padding:.7rem 1.4rem}
+.navbtn:hover{background:#fff;color:var(--ink);border-color:#fff;opacity:1}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:6px}
+.menu-toggle span{width:24px;height:1.5px;background:#fff;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;height:100vh;min-height:680px;width:100%;
+  display:flex;align-items:stretch;justify-content:center;text-align:center;
+  color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;
+  background:url('images/lux-hero-pool.jpg') center/cover no-repeat;
+  transform:scale(1.04);animation:zoom 22s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(31,27,20,.34) 0%,rgba(31,27,20,.12) 40%,rgba(31,27,20,.55) 100%)}
+.hero-inner{position:relative;z-index:2;padding:14vh 22px 6vh;max-width:880px;width:100%;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:center;
+  text-shadow:0 2px 22px rgba(0,0,0,.4)}
+.hero-top{display:flex;flex-direction:column;align-items:center;gap:1.1rem}
+.hero-top .line{width:54px;height:1px;background:var(--gold)}
+.hero-top .eyebrow{color:#f6e9d2;letter-spacing:.5em}
+.hero-bottom{display:flex;flex-direction:column;align-items:center;gap:2.6rem}
+.hero-tag{font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;
+  font-size:clamp(1.2rem,2.2vw,1.55rem);line-height:1.4;opacity:.96;letter-spacing:.01em;
+  max-width:560px;margin:0}
+
+/* ---------- SECTION basics ---------- */
+section{position:relative}
+.pad{padding:clamp(6rem,11vw,11rem) 0}
+.pad-sm{padding:clamp(4rem,7vw,7rem) 0}
+.center{text-align:center;max-width:740px;margin:0 auto}
+.section-title{font-size:clamp(2.4rem,5.6vw,4.2rem);margin:.9rem 0 1.1rem;letter-spacing:.005em}
+.lead{font-size:1.05rem;color:var(--ink-soft);font-weight:300;line-height:1.85}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:1.1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- INTRO (editorial pull quote) ---------- */
+.intro{background:var(--bg);text-align:center}
+.intro .stamp{font-family:'Jost',sans-serif;font-weight:300;font-size:.68rem;letter-spacing:.5em;
+  text-transform:uppercase;color:var(--terra);margin-bottom:2.4rem;display:inline-block}
+.intro .stamp:before,.intro .stamp:after{content:"";display:inline-block;width:36px;height:1px;
+  background:var(--bronze);vertical-align:middle;margin:0 1rem}
+.intro h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:1.25;color:var(--ink);max-width:880px;margin:0 auto;
+  letter-spacing:.005em}
+.intro h2 em{color:var(--terra);font-style:italic}
+.intro .sig{margin-top:3.2rem;font-family:'Jost',sans-serif;font-weight:300;font-size:.7rem;
+  letter-spacing:.42em;text-transform:uppercase;color:var(--ink-mute)}
+
+/* ---------- STORY (2 col) ---------- */
+.story{background:var(--bg-soft)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.story-img img{width:100%;height:auto;object-fit:cover;display:block;box-shadow:var(--shadow)}
+.story-img{position:relative}
+.story-img .corner{position:absolute;bottom:-26px;right:-26px;background:var(--bg);
+  border:1px solid var(--line);padding:1.2rem 1.6rem;text-align:center;box-shadow:var(--shadow)}
+.story-img .corner .n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--terra);line-height:1}
+.story-img .corner .l{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute);margin-top:4px}
+.story-text .eyebrow{display:block;margin-bottom:.9rem}
+.story-text h2{font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:1.6rem}
+.story-text p{color:var(--ink-soft);margin-bottom:1.2rem;font-weight:300}
+.story-text .divider{margin:1.8rem 0}
+
+/* ---------- SPACE (alternating) ---------- */
+.space{background:var(--bg)}
+.space:nth-child(even){background:var(--bg-soft)}
+.space-row{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.space-row.rev{grid-template-columns:.9fr 1.1fr}
+.space-row.rev .space-img{order:2}
+.space-img img{width:100%;height:auto;object-fit:cover;display:block;box-shadow:var(--shadow)}
+.space-text .eyebrow{display:block;margin-bottom:.9rem}
+.space-text h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:1.4rem}
+.space-text p{color:var(--ink-soft);margin-bottom:1rem;font-weight:300}
+.space-text ul{list-style:none;margin-top:1.6rem;display:flex;flex-direction:column;gap:.45rem}
+.space-text li{display:flex;align-items:center;gap:.9rem;font-size:.78rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-mute);font-weight:400}
+.space-text li:before{content:"";width:22px;height:1px;background:var(--bronze);display:inline-block}
+
+/* ---------- GALLERY ---------- */
+.gallery{background:var(--ink);color:var(--bg)}
+.gallery .eyebrow{color:var(--gold)}
+.gallery .lead{color:rgba(246,237,221,.7)}
+.gallery .divider{background:var(--gold)}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:14px;margin-top:3.6rem}
+.g-grid figure{overflow:hidden;cursor:pointer;position:relative;background:#0e0c08}
+.g-grid img{width:100%;height:100%;object-fit:cover;transition:.9s ease;opacity:.96}
+.g-grid figure:hover img{transform:scale(1.06);opacity:1}
+.g-grid figure:after{content:"";position:absolute;inset:0;background:rgba(31,27,20,.08);opacity:0;transition:.3s}
+.g-grid figure:hover:after{opacity:1}
+.tall{grid-row:span 2}
+.wide{grid-column:span 2}
+.lb{position:fixed;inset:0;z-index:120;background:rgba(15,11,7,.95);display:none;
+  align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:86vh;box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.lb .x,.lb .nav-arrow{position:absolute;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.3);
+  width:52px;height:52px;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;transition:.3s}
+.lb .x:hover,.lb .nav-arrow:hover{background:rgba(255,255,255,.18);border-color:#fff}
+.lb .x{top:26px;right:26px}
+.lb .prev{left:26px;top:50%;transform:translateY(-50%)}
+.lb .next{right:26px;top:50%;transform:translateY(-50%)}
+.lb .count{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#fff;
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase}
+
+/* ---------- BOOKING ---------- */
+.booking{background:var(--bg-soft)}
+.book-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,4vw,3.4rem);
+  margin-top:3.4rem;align-items:start}
+.cal-card,.quote-card{background:var(--cream);border:1px solid var(--line);
+  padding:2rem;box-shadow:var(--shadow)}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.4rem}
+.cal-head h4{font-size:1.5rem}
+.cal-nav{display:flex;gap:.6rem}
+.cal-nav button{width:38px;height:38px;border:1px solid var(--line);
+  background:transparent;cursor:pointer;font-size:1rem;transition:.3s;color:var(--ink)}
+.cal-nav button:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.cal-months{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:620px){.cal-months{grid-template-columns:1fr}}
+.month-label{text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.35rem;
+  margin-bottom:.7rem;letter-spacing:.01em}
+.dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:6px}
+.dow span{text-align:center;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.85rem;
+  cursor:pointer;transition:.2s;position:relative;color:var(--ink);font-weight:300}
+.day.empty{cursor:default}
+.day.avail:hover{background:rgba(184,106,77,.15)}
+.day.past,.day.booked{color:#bdb19c;cursor:not-allowed;text-decoration:line-through}
+.day.booked{background:repeating-linear-gradient(45deg,rgba(184,106,77,.06),rgba(184,106,77,.06) 4px,transparent 4px,transparent 8px)}
+.day.sel{background:var(--terra);color:#fff}
+.day.inrange{background:rgba(184,106,77,.2)}
+.legend{display:flex;gap:1.3rem;flex-wrap:wrap;margin-top:1.4rem;font-size:.66rem;
+  color:var(--ink-mute);letter-spacing:.16em;text-transform:uppercase}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-2px}
+.legend .l-av{background:rgba(184,106,77,.18)}
+.legend .l-bk{background:repeating-linear-gradient(45deg,rgba(184,106,77,.18),rgba(184,106,77,.18) 3px,transparent 3px,transparent 6px);border:1px solid var(--line)}
+.legend .l-sl{background:var(--terra)}
+.quote-card h4{font-size:1.55rem;margin-bottom:.4rem}
+.quote-sub{font-size:.78rem;color:var(--ink-mute);margin-bottom:1.4rem;letter-spacing:.02em;font-style:italic;
+  font-family:'Cormorant Garamond',serif}
+.q-dates{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1rem}
+.q-date{border:1px solid var(--line);padding:.85rem 1rem}
+.q-date small{display:block;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute)}
+.q-date b{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500}
+.guests-row{display:flex;align-items:center;justify-content:space-between;margin:1.2rem 0 1.6rem;
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.stepper{display:flex;align-items:center;gap:1.1rem}
+.stepper button{width:34px;height:34px;border:1px solid var(--line);background:transparent;
+  cursor:pointer;font-size:1.1rem;color:var(--ink);transition:.3s}
+.stepper button:hover{background:var(--ink);color:var(--cream)}
+.stepper b{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:var(--ink)}
+.q-row{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;
+  border-bottom:1px dashed var(--line);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft)}
+.quote-card .btn{width:100%;justify-content:center;margin-top:1.6rem}
+.note{font-size:.7rem;color:var(--ink-mute);text-align:center;margin-top:1rem;font-style:italic;
+  font-family:'Cormorant Garamond',serif}
+.sync-pill{display:inline-flex;align-items:center;gap:.6rem;font-size:.6rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--moss);margin-top:1.2rem;font-weight:400}
+.sync-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--moss);
+  box-shadow:0 0 0 0 rgba(74,90,63,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,90,63,.5)}70%{box-shadow:0 0 0 8px rgba(74,90,63,0)}100%{box-shadow:0 0 0 0 rgba(74,90,63,0)}}
+
+/* ---------- LOCATION ---------- */
+.location{background:var(--ink);color:var(--bg)}
+.location .eyebrow{color:var(--gold)}
+.location .divider{background:var(--gold)}
+.location .lead{color:rgba(246,237,221,.72)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);
+  align-items:center;margin-top:3rem}
+.loc-copy p{color:rgba(246,237,221,.78);margin-bottom:1.2rem;font-weight:300}
+.loc-list{margin-top:2rem;display:grid;gap:.7rem}
+.loc-list div{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);
+  padding:.7rem 0;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase}
+.loc-list span:first-child{color:rgba(246,237,221,.85)}
+.loc-list span:last-child{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1rem;
+  letter-spacing:.02em;text-transform:none;font-style:italic}
+.map-frame{overflow:hidden;box-shadow:var(--shadow);height:460px;border:1px solid rgba(255,255,255,.08)}
+.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(.15) contrast(1.04)}
+.loc-copy .btn{margin-top:2rem}
+
+/* ---------- INQUIRE ---------- */
+.inquire{background:url('images/lux-story-twilight.jpg') center/cover fixed no-repeat;position:relative}
+.inquire:before{content:"";position:absolute;inset:0;background:rgba(31,27,20,.75)}
+.inq-card{position:relative;z-index:2;background:var(--bg);max-width:780px;
+  margin:0 auto;padding:clamp(2.4rem,5vw,4rem);box-shadow:var(--shadow)}
+.inq-card .center{margin-bottom:2.4rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1.4rem}
+.field{display:flex;flex-direction:column;gap:.5rem}
+.field.full{grid-column:1/-1}
+.field label{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute);font-weight:400}
+.field input,.field textarea{font-family:'Jost';font-weight:300;font-size:.95rem;padding:.95rem 1.1rem;
+  border:1px solid var(--line);background:var(--cream);color:var(--ink);transition:.3s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--terra);
+  box-shadow:0 0 0 3px rgba(184,106,77,.1)}
+.field textarea{resize:vertical;min-height:120px;font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic}
+.inq-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
+.inq-actions .btn{flex:1;justify-content:center;min-width:200px}
+
+/* ---------- FOOTER ---------- */
+footer{background:#16130d;color:rgba(246,237,221,.65);padding:4rem 0 2.4rem}
+.foot-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2.4rem;
+  padding-bottom:2.6rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-size:1.6rem;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--bg);font-weight:400}
+.foot-brand small{display:block;font-family:'Jost';font-weight:300;font-size:.5rem;letter-spacing:.5em;margin-top:6px;opacity:.7}
+.foot-block h5{font-family:'Jost',sans-serif;font-weight:400;font-size:.62rem;letter-spacing:.36em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
+.foot-block a,.foot-block p{display:block;font-size:.85rem;line-height:2;color:rgba(246,237,221,.72)}
+.foot-block a:hover{color:var(--gold)}
+.foot-bottom{text-align:center;font-size:.62rem;letter-spacing:.36em;text-transform:uppercase;
+  margin-top:2rem;opacity:.45}
+
+/* floating whatsapp */
+.fab{position:fixed;bottom:22px;right:22px;z-index:80;width:46px;height:46px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 24px -8px rgba(0,0,0,.45);transition:.3s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:24px;height:24px;fill:#fff}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .story-grid,.space-row,.space-row.rev,.loc-grid,.book-grid{grid-template-columns:1fr}
+  .space-row.rev .space-img{order:0}
+  .g-grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:200px}
+  .foot-top{grid-template-columns:1fr;text-align:center}
+  .story-img .corner{left:50%;right:auto;transform:translateX(-50%);bottom:-22px}
+}
+@media(max-width:860px){
+  .navlinks{position:fixed;inset:0 0 0 auto;width:min(82vw,340px);background:var(--bg);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:1.6rem;padding:3rem;
+    transform:translateX(100%);transition:.45s;box-shadow:var(--shadow)}
+  .navlinks.show{transform:none}
+  .navlinks a{color:var(--ink)!important;font-size:.78rem}
+  .navbtn{border-color:var(--ink)!important}
+  .menu-toggle{display:flex;z-index:70}
+}
+@media(max-width:560px){
+  .g-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .wrap,.wrap-narrow{padding:0 22px}
+  .q-dates{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand">Villa&nbsp;Home<small>Batu&nbsp;Belig · Bali</small></a>
+  <nav class="navlinks" id="navlinks">
+    <a href="#story">Story</a>
+    <a href="#spaces">Spaces</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#booking">Stay</a>
+    <a href="#location">Location</a>
+    <a href="#inquire" class="navbtn">Inquire</a>
+    <a href="zh.html" lang="zh-CN">中文</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <span class="line"></span>
+      <p class="eyebrow">Batu Belig · Bali</p>
+    </div>
+    <div class="hero-bottom">
+      <a href="#booking" class="btn btn-ghost">Check Availability</a>
+      <p class="hero-tag">An intimate joglo sanctuary,<br/>moments from the sea.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO / EDITORIAL STATEMENT -->
+<section class="pad intro">
+  <div class="wrap-narrow reveal">
+    <span class="stamp">Villa Home · Bali</span>
+    <h2>Where teakwood and tropical air conspire to slow the day — a private retreat of carved pavilions, terracotta-blushed bathrooms and <em>a long emerald pool</em>, set behind quiet garden walls in Batu Belig.</h2>
+    <p class="sig">An intimate sanctuary for up to nine guests</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="pad story" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-img reveal">
+        <img src="images/lux-story-twilight.jpg" alt="Villa Home at twilight, reflected in the pool" />
+        <div class="corner"><div class="n">1,200</div><div class="l">m² of garden</div></div>
+      </div>
+      <div class="story-text reveal">
+        <span class="eyebrow">The Villa</span>
+        <h2>A modern Bali sanctuary, traditionally crafted</h2>
+        <span class="divider divider-left"></span>
+        <p>Set behind quiet garden walls in leafy Batu Belig, Villa Home is a tribute to traditional Balinese craftsmanship — a hand-built joglo of aged teak and soaring alang-alang roofs, where open pavilions dissolve the line between inside and out.</p>
+        <p>Days drift between the long emerald pool, shaded daybeds and a vast open-air living space carved with antique detail. The villa offers complete privacy for a family or group of up to nine, yet sits a short stroll from Batu Belig beach and minutes from Seminyak's dining and boutiques.</p>
+        <p>This is Bali the way it was meant to be felt — barefoot, unhurried, quietly luxurious.</p>
+        <a href="#booking" class="btn btn-outline" style="margin-top:1.2rem">View Available Dates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE: Pavilion -->
+<section class="pad space" id="spaces">
+  <div class="wrap">
+    <div class="space-row reveal">
+      <div class="space-img"><img src="images/lux-pavilion.jpg" alt="Open-air joglo living pavilion with rattan sofas" /></div>
+      <div class="space-text">
+        <span class="eyebrow">The Heart</span>
+        <h2>The open-air pavilion</h2>
+        <span class="divider divider-left"></span>
+        <p>The soul of the villa is a vast open-sided joglo — hand-carved teak ceilings, deep daybeds and lounge seating that opens straight onto the pool and garden. The perfect place to gather for sundowners or stretch out with a book in the breeze.</p>
+        <ul>
+          <li>Open-air lounge &amp; dining</li>
+          <li>Hand-carved teak ceiling</li>
+          <li>Pool &amp; garden views</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE: Pool -->
+<section class="pad space">
+  <div class="wrap">
+    <div class="space-row rev reveal">
+      <div class="space-img"><img src="images/lux-pool-deck.jpg" alt="Long emerald pool with teak deck and palms" /></div>
+      <div class="space-text">
+        <span class="eyebrow">Outdoors</span>
+        <h2>Pool &amp; tropical garden</h2>
+        <span class="divider divider-left"></span>
+        <p>A long, sun-drenched emerald pool sits at the centre of 1,200 m² of lush garden, edged with loungers, fringed parasols and a shaded bale. Space to swim, sunbathe and disappear into green.</p>
+        <ul>
+          <li>Long private pool</li>
+          <li>Loungers &amp; daybeds</li>
+          <li>1,200 m² tropical garden</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE: Bedrooms -->
+<section class="pad space">
+  <div class="wrap">
+    <div class="space-row reveal">
+      <div class="space-img"><img src="images/lux-bedroom-poolview.jpg" alt="Bedroom suite opening to the pool" /></div>
+      <div class="space-text">
+        <span class="eyebrow">Rest</span>
+        <h2>Three vaulted bedrooms</h2>
+        <span class="divider divider-left"></span>
+        <p>Three air-conditioned bedroom suites blend antique Balinese doors and artwork with crisp linens and ensuite bathrooms — each crowned with a soaring teak rosette ceiling. One opens directly to the pool, another frames the garden through full-height glass.</p>
+        <ul>
+          <li>3 en-suite bedrooms</li>
+          <li>Sleeps up to 9 with extra beds</li>
+          <li>Soaring vaulted teak ceilings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE: Bathrooms -->
+<section class="pad space">
+  <div class="wrap">
+    <div class="space-row rev reveal">
+      <div class="space-img"><img src="images/lux-bathroom-terracotta.jpg" alt="Terracotta-plastered bathroom with carved teak mirror" /></div>
+      <div class="space-text">
+        <span class="eyebrow">Bathe</span>
+        <h2>Terracotta sanctuaries</h2>
+        <span class="divider divider-left"></span>
+        <p>Hand-finished tadelakt plaster in deep terracotta, antique mother-of-pearl inlaid mirrors, stone vessel sinks and brass fixtures — each bathroom is its own small theatre. Some open to a private outdoor rain shower beneath a bamboo roof.</p>
+        <ul>
+          <li>Hand-finished plaster walls</li>
+          <li>Stone vessel sinks</li>
+          <li>Outdoor rain showers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="pad gallery" id="gallery">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Gallery</p>
+      <h2 class="section-title">A closer look</h2>
+      <span class="divider"></span>
+      <p class="lead">Tap any image to view full screen.</p>
+    </div>
+    <div class="g-grid" id="gGrid"><!-- filled by JS --></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="x" id="lbX">&times;</button>
+  <button class="nav-arrow prev" id="lbPrev">&#8249;</button>
+  <img id="lbImg" src="" alt="" />
+  <button class="nav-arrow next" id="lbNext">&#8250;</button>
+  <div class="count" id="lbCount"></div>
+</div>
+
+<!-- BOOKING -->
+<section class="pad booking" id="booking">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Availability</p>
+      <h2 class="section-title">Find your dates</h2>
+      <span class="divider"></span>
+      <p class="lead">Live availability synced from our calendar. Choose your check-in and check-out, then send us a request — we'll confirm personally, with no booking fees.</p>
+    </div>
+    <div class="book-grid">
+      <div class="cal-card reveal">
+        <div class="cal-head">
+          <h4>Select your stay</h4>
+          <div class="cal-nav">
+            <button id="prevM" aria-label="Previous month">&#8249;</button>
+            <button id="nextM" aria-label="Next month">&#8250;</button>
+          </div>
+        </div>
+        <div class="cal-months" id="calMonths"></div>
+        <div class="legend">
+          <span><i class="l-av"></i>Available</span>
+          <span><i class="l-bk"></i>Booked</span>
+          <span><i class="l-sl"></i>Your selection</span>
+        </div>
+        <div class="sync-pill" id="syncPill"><span class="dot"></span><span id="syncText">Loading live availability…</span></div>
+      </div>
+      <div class="quote-card reveal">
+        <h4>Your stay</h4>
+        <p class="quote-sub">Select your dates — we'll confirm availability &amp; your quote personally</p>
+        <div class="q-dates">
+          <div class="q-date"><small>Check in</small><b id="ciLbl">—</b></div>
+          <div class="q-date"><small>Check out</small><b id="coLbl">—</b></div>
+        </div>
+        <div class="guests-row">
+          <span>Guests</span>
+          <div class="stepper">
+            <button id="gMinus" aria-label="Fewer guests">−</button>
+            <b id="gCount">2</b>
+            <button id="gPlus" aria-label="More guests">+</button>
+          </div>
+        </div>
+        <div class="q-row" id="nightsRow" style="display:none"><span>Length of stay</span><span id="nightsVal">—</span></div>
+        <button class="btn btn-terra" id="reqWhats">Request via WhatsApp</button>
+        <p class="note" id="bookNote">Select your dates to send a request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="pad location" id="location">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">Location</p>
+      <h2 class="section-title">Batu Belig, Kerobokan</h2>
+      <span class="divider"></span>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-copy reveal">
+        <p>Villa Home sits in Batu Belig — a relaxed, leafy beachside pocket of Kerobokan between Seminyak and Canggu. You're a short stroll from the sand, yet tucked away in tropical quiet, only minutes from Bali's best beaches, beach clubs, restaurants and surf.</p>
+        <div class="loc-list">
+          <div><span>Batu Belig Beach</span><span>~5 min · walkable</span></div>
+          <div><span>Seminyak</span><span>~10 min drive</span></div>
+          <div><span>Canggu / Echo Beach</span><span>~15 min drive</span></div>
+          <div><span>Ngurah Rai Airport</span><span>~30 min drive</span></div>
+        </div>
+        <a href="https://maps.app.goo.gl/D2A5r18poJ1RupXJ9" target="_blank" rel="noopener" class="btn btn-ghost" style="border-color:rgba(255,255,255,.45)">Open in Google Maps</a>
+      </div>
+      <div class="map-frame reveal">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Home+Bali+Villa,Batu+Belig,Bali&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRE -->
+<section class="pad inquire" id="inquire">
+  <div class="wrap">
+    <div class="inq-card reveal">
+      <div class="center">
+        <p class="eyebrow">Inquire</p>
+        <h2 class="section-title">Plan your stay</h2>
+        <span class="divider"></span>
+        <p class="lead">Send us your dates and we'll get back to you personally — usually within a few hours.</p>
+      </div>
+      <div class="form-grid">
+        <div class="field"><label>Full name</label><input type="text" id="fName" placeholder="Your name" /></div>
+        <div class="field"><label>Phone / WhatsApp</label><input type="text" id="fPhone" placeholder="+…" /></div>
+        <div class="field"><label>Check in</label><input type="date" id="fCheckin" /></div>
+        <div class="field"><label>Check out</label><input type="date" id="fCheckout" /></div>
+        <div class="field"><label>Guests</label><input type="number" id="fGuests" min="1" value="2" /></div>
+        <div class="field"></div>
+        <div class="field full"><label>Message</label><textarea id="fMsg" placeholder="Tell us a little about your trip…"></textarea></div>
+      </div>
+      <div class="inq-actions">
+        <button class="btn btn-terra" id="sendWhats">Send via WhatsApp</button>
+        <a class="btn btn-outline" id="airbnbBtn" href="#" target="_blank" rel="noopener" style="display:none">View on Airbnb</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">Villa Home<small>Batu Belig · Bali</small></div>
+        <p style="margin-top:1.2rem;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.6;color:rgba(246,237,221,.72)">An intimate joglo sanctuary, moments from the sea.</p>
+      </div>
+      <div class="foot-block">
+        <h5>Explore</h5>
+        <a href="#story">The villa</a>
+        <a href="#spaces">Spaces</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Availability</a>
+        <a href="#location">Location</a>
+      </div>
+      <div class="foot-block" id="footContact">
+        <h5>Direct booking</h5>
+      </div>
+    </div>
+    <div class="foot-bottom">© <span id="yr"></span> Villa Home Bali · Book direct, no fees</div>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.2 1.1 1.1-4-.3-.4c-1-1.6-1.6-3.5-1.6-5.4C5.5 9.8 10.2 5.2 16 5.2S26.5 9.8 26.5 15.5 21.8 25.7 16 25.7zm5.8-7.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.9-.9-3.1-1.7-4.4-3.8-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.1 2.2.9 3 1 4.1.9.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+
+let CONFIG = { minNights:2, maxGuests:9, bedrooms:3, bathrooms:3,
+  whatsappNumber:'+62 819 1636 2285', contactEmail:'', airbnbUrl:'',
+  villaName:'Villa Home', landSize:'1,200 m²' };
+let BOOKED = new Set();
+let CI = null, CO = null, GUESTS = 2;
+let viewDate = new Date(); viewDate.setDate(1);
+
+const iso = d => d.toISOString().split('T')[0];
+const fmtNice = d => d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+
+/* ---------- gallery ---------- */
+const PHOTOS = [
+  {src:'lux-g-interior-out.jpg', alt:'Looking out from the joglo dining table', cls:'wide tall'},
+  {src:'lux-g-lounge.jpg',         alt:'Lounge detail',                          cls:''},
+  {src:'lux-g-living-detail.jpg',  alt:'Living space detail',                    cls:''},
+  {src:'lux-g-dining.jpg',         alt:'Open-air dining',                        cls:'tall'},
+  {src:'lux-g-night.jpg',          alt:'Villa lit at night',                     cls:'wide'},
+  {src:'lux-g-bedroom-rosette.jpg',alt:'Bedroom with carved teak rosette ceiling',cls:''},
+  {src:'lux-g-bedroom-vaulted.jpg',alt:'Vaulted teak bedroom',                   cls:''},
+  {src:'lux-g-bedroom-2.jpg',      alt:'Bedroom suite',                          cls:''},
+  {src:'lux-g-bath-detail.jpg',    alt:'Bathroom detail',                        cls:'wide'},
+  {src:'lux-g-amenities.jpg',      alt:'Amenities detail',                       cls:''},
+  {src:'lux-g-outdoor-shower.jpg', alt:'Outdoor rain shower',                    cls:''},
+  {src:'lux-g-detail3.jpg',        alt:'Architectural detail',                   cls:''}
+];
+function buildGallery(){
+  const g = $('#gGrid');
+  g.innerHTML = PHOTOS.map((p,i)=>`<figure data-i="${i}" class="${p.cls}"><img src="images/${p.src}" alt="${p.alt}" loading="lazy"/></figure>`).join('');
+  $$('#gGrid figure').forEach(f=>f.addEventListener('click',()=>openLb(+f.dataset.i)));
+}
+let lbI = 0;
+function openLb(i){ lbI=i; $('#lbImg').src='images/'+PHOTOS[i].src; $('#lbImg').alt=PHOTOS[i].alt;
+  $('#lbCount').textContent=(i+1)+' / '+PHOTOS.length; $('#lb').classList.add('open'); }
+function moveLb(d){ lbI=(lbI+d+PHOTOS.length)%PHOTOS.length; openLb(lbI); }
+$('#lbX').onclick=()=>$('#lb').classList.remove('open');
+$('#lbPrev').onclick=()=>moveLb(-1);
+$('#lbNext').onclick=()=>moveLb(1);
+$('#lb').addEventListener('click',e=>{if(e.target.id==='lb')$('#lb').classList.remove('open')});
+document.addEventListener('keydown',e=>{ if(!$('#lb').classList.contains('open'))return;
+  if(e.key==='Escape')$('#lb').classList.remove('open'); if(e.key==='ArrowLeft')moveLb(-1); if(e.key==='ArrowRight')moveLb(1); });
+
+/* ---------- calendar ---------- */
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const today = new Date(); today.setHours(0,0,0,0);
+
+function renderCalendar(){
+  const host = $('#calMonths'); host.innerHTML='';
+  for(let m=0;m<2;m++){
+    const d = new Date(viewDate.getFullYear(), viewDate.getMonth()+m, 1);
+    host.appendChild(monthEl(d));
+  }
+}
+function monthEl(first){
+  const wrap=document.createElement('div');
+  const y=first.getFullYear(), mo=first.getMonth();
+  const lbl=document.createElement('div'); lbl.className='month-label';
+  lbl.textContent=MONTHS[mo]+' '+y; wrap.appendChild(lbl);
+  const dow=document.createElement('div'); dow.className='dow';
+  dow.innerHTML=['S','M','T','W','T','F','S'].map(d=>`<span>${d}</span>`).join(''); wrap.appendChild(dow);
+  const days=document.createElement('div'); days.className='days';
+  const start=new Date(y,mo,1).getDay();
+  const total=new Date(y,mo+1,0).getDate();
+  for(let i=0;i<start;i++){const e=document.createElement('div');e.className='day empty';days.appendChild(e);}
+  for(let dnum=1;dnum<=total;dnum++){
+    const cell=document.createElement('div'); cell.className='day'; cell.textContent=dnum;
+    const cur=new Date(y,mo,dnum); cur.setHours(0,0,0,0);
+    const key=iso(cur);
+    if(cur<today){cell.classList.add('past');}
+    else if(BOOKED.has(key)){cell.classList.add('booked');}
+    else{
+      cell.classList.add('avail');
+      cell.addEventListener('click',()=>pickDate(cur));
+    }
+    if(CI&&iso(cur)===iso(CI)){cell.classList.add('sel','start');}
+    if(CO&&iso(cur)===iso(CO)){cell.classList.add('sel','end');}
+    if(CI&&CO&&cur>CI&&cur<CO){cell.classList.add('inrange');}
+    days.appendChild(cell);
+  }
+  wrap.appendChild(days); return wrap;
+}
+function rangeHasBooked(a,b){
+  const c=new Date(a); c.setDate(c.getDate()+1);
+  while(c<b){ if(BOOKED.has(iso(c)))return true; c.setDate(c.getDate()+1);} return false;
+}
+function pickDate(d){
+  if(!CI||(CI&&CO)){ CI=d; CO=null; }
+  else if(d<=CI){ CI=d; CO=null; }
+  else {
+    if(rangeHasBooked(CI,d)){ CI=d; CO=null; }
+    else { CO=d; }
+  }
+  renderCalendar(); updateQuote();
+}
+function updateQuote(){
+  $('#ciLbl').textContent = CI?fmtNice(CI):'—';
+  $('#coLbl').textContent = CO?fmtNice(CO):'—';
+  if(CI&&CO){
+    const nights=Math.round((CO-CI)/86400000);
+    $('#nightsRow').style.display='flex';
+    $('#nightsVal').textContent = nights + (nights===1?' night':' nights');
+    if(nights<CONFIG.minNights){
+      $('#bookNote').innerHTML=`<span style="color:var(--terra-dk)">Minimum stay is ${CONFIG.minNights} nights.</span>`;
+    } else {
+      $('#bookNote').textContent='We confirm your booking personally — no booking fees.';
+    }
+    $('#fCheckin').value=iso(CI); $('#fCheckout').value=iso(CO);
+  } else {
+    $('#nightsRow').style.display='none';
+    $('#bookNote').textContent= CI ? 'Now choose your check-out date.' : 'Select your dates to send a request.';
+  }
+}
+
+/* steppers */
+$('#gPlus').onclick=()=>{GUESTS=Math.min(CONFIG.maxGuests,GUESTS+1);$('#gCount').textContent=GUESTS;$('#fGuests').value=GUESTS;};
+$('#gMinus').onclick=()=>{GUESTS=Math.max(1,GUESTS-1);$('#gCount').textContent=GUESTS;$('#fGuests').value=GUESTS;};
+
+/* month nav */
+$('#prevM').onclick=()=>{ const min=new Date(today.getFullYear(),today.getMonth(),1);
+  const nv=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1); if(nv>=min){viewDate=nv;renderCalendar();} };
+$('#nextM').onclick=()=>{ viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1); renderCalendar(); };
+
+/* ---------- requests ---------- */
+function buildMsg(){
+  const lines=[`Hello! I'd love to book ${CONFIG.villaName}.`,''];
+  if(CI&&CO){ const nights=Math.round((CO-CI)/86400000);
+    lines.push(`Check-in: ${fmtNice(CI)}`,`Check-out: ${fmtNice(CO)}`,`Nights: ${nights}`); }
+  lines.push(`Guests: ${GUESTS}`,'',`Could you please confirm availability and the total price? Thank you!`);
+  return lines.join('\n');
+}
+function waLink(text){
+  const num=(CONFIG.whatsappNumber||'').replace(/[^0-9]/g,'');
+  return `https://wa.me/${num}?text=${encodeURIComponent(text)}`;
+}
+function guard(){
+  if(!CI||!CO){ alert('Please select your check-in and check-out dates first.'); return false; }
+  const nights=Math.round((CO-CI)/86400000);
+  if(nights<CONFIG.minNights){ alert('Minimum stay is '+CONFIG.minNights+' nights.'); return false; }
+  return true;
+}
+$('#reqWhats').onclick=()=>{ if(!guard())return; window.open(waLink(buildMsg()),'_blank'); };
+
+/* inquiry form */
+function formMsg(){
+  const n=$('#fName').value||'(no name)', ph=$('#fPhone').value||'';
+  const ci=$('#fCheckin').value, co=$('#fCheckout').value, g=$('#fGuests').value||GUESTS, m=$('#fMsg').value||'';
+  return [`Booking inquiry — ${CONFIG.villaName}`,'',`Name: ${n}`,`Phone / WhatsApp: ${ph}`,
+    `Check-in: ${ci||'—'}`,`Check-out: ${co||'—'}`,`Guests: ${g}`,'',`Message: ${m}`].join('\n');
+}
+$('#sendWhats').onclick=()=>window.open(waLink(formMsg()),'_blank');
+
+/* ---------- data load ---------- */
+async function load(){
+  try{
+    const c=await fetch('/api/config').then(r=>r.json());
+    CONFIG={...CONFIG,...c};
+  }catch(e){ console.warn('config load failed (preview mode)',e); }
+  GUESTS=Math.min(CONFIG.maxGuests,2)||2; $('#gCount').textContent=GUESTS; $('#fGuests').value=GUESTS; $('#fGuests').max=CONFIG.maxGuests;
+  if(CONFIG.whatsappNumber){ $('#fab').href=waLink('Hi! I have a question about '+CONFIG.villaName); } else { $('#fab').style.display='none'; }
+  const fc=$('#footContact'); fc.innerHTML='<h5>Direct booking</h5>';
+  if(CONFIG.whatsappNumber) fc.innerHTML+=`<a href="${waLink('Hi! Question about '+CONFIG.villaName)}" target="_blank">WhatsApp · ${CONFIG.whatsappNumber}</a>`;
+  if(CONFIG.airbnbUrl){ fc.innerHTML+=`<a href="${CONFIG.airbnbUrl}" target="_blank">View on Airbnb</a>`; const a=$('#airbnbBtn'); a.href=CONFIG.airbnbUrl; a.style.display='inline-flex'; }
+  updateQuote();
+  try{
+    const av=await fetch('/api/availability').then(r=>r.json());
+    BOOKED=new Set(av.bookedDates||[]);
+    if(av.configured===false){
+      $('#syncText').textContent='Live calendar not yet connected';
+      $('#syncPill').style.color='var(--terra-dk)';
+      $('#syncPill').querySelector('.dot').style.background='var(--terra-dk)';
+    }else{
+      $('#syncText').textContent='Live availability · synced with Airbnb';
+    }
+  }catch(e){ $('#syncText').textContent='Availability unavailable in preview'; }
+  renderCalendar();
+}
+
+/* ---------- nav + reveal ---------- */
+const nav=$('#nav');
+window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',window.scrollY>60); });
+$('#menuToggle').onclick=()=>$('#navlinks').classList.toggle('show');
+$$('#navlinks a').forEach(a=>a.onclick=()=>$('#navlinks').classList.remove('show'));
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+$('#yr').textContent=new Date().getFullYear();
+
+buildGallery(); renderCalendar(); load();
+</script>
+</body>
+</html>

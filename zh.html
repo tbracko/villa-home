@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Villa Home 巴厘岛私享柚木别墅 · 巴图贝利格 · 步行5分钟到海滩</title>
+<meta name="description" content="Villa Home 位于巴厘岛巴图贝利格（Batu Belig），传统柚木 Joglo 建筑，16米私人泳池，1200㎡热带花园，三间卧室最多可住9人。专属管家、私厨早餐，中国住客全部五星好评。" />
+<link rel="alternate" hreflang="en" href="/" />
+<link rel="alternate" hreflang="zh-CN" href="/zh.html" />
+<!-- No Google Fonts / Google Maps on this page: both are blocked in mainland China. System Chinese fonts only. -->
+<style>
+:root{
+  --bg:#F2EAD9; --bg-soft:#ECE3CE; --cream:#FAF4E5;
+  --ink:#1F1B14; --ink-soft:#5A5044; --ink-mute:#8A7E6B;
+  --terra:#B86A4D; --terra-dk:#8C5039; --bronze:#9F7E4A; --gold:#C2A263;
+  --line:rgba(31,27,20,.14); --shadow:0 30px 70px -34px rgba(31,27,20,.45);
+  --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","Noto Serif CJK SC","SimSun",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --latin:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.9;font-weight:300;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:.02em}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.35;color:var(--ink);letter-spacing:.06em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:.78rem;letter-spacing:.4em;color:var(--terra);font-weight:400}
+.eyebrow .en{font-family:var(--latin);letter-spacing:.3em;text-transform:uppercase;font-size:.66rem;margin-left:.6rem;color:var(--ink-mute)}
+.divider{width:54px;height:1px;background:var(--bronze);margin:1.4rem auto;display:block}
+.center{text-align:center;max-width:760px;margin:0 auto}
+.section-title{font-size:clamp(2rem,4.6vw,3.2rem);margin:.8rem 0 .6rem}
+.lead{font-size:1.02rem;color:var(--ink-soft)}
+.pad{padding:clamp(5rem,10vw,9rem) 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--sans);
+  font-size:.92rem;letter-spacing:.2em;padding:1rem 2.1rem;border:1px solid transparent;cursor:pointer;
+  transition:.4s;white-space:nowrap;font-weight:400}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.btn-terra{background:var(--terra);color:#fff;border-color:var(--terra)}
+.btn-terra:hover{background:var(--terra-dk)}
+.btn-outline{border-color:var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--cream)}
+.reveal{opacity:0;transform:translateY(30px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;
+  justify-content:space-between;padding:1rem 2.2rem;transition:.4s}
+header.nav::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:rgba(31,27,20,.18);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);transition:background .4s}
+header.nav.scrolled::before{background:rgba(31,27,20,.42)}
+.brand{font-family:var(--latin);font-size:1.15rem;letter-spacing:.32em;text-transform:uppercase;color:#fff;line-height:1}
+.brand small{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.5em;text-align:center;opacity:.8;margin-top:5px;text-transform:none}
+.navlinks{display:flex;align-items:center;gap:2.2rem}
+.navlinks a{font-size:.86rem;letter-spacing:.2em;color:#fff;opacity:.9}
+.navlinks a:hover{opacity:1}
+.navlinks .lang{font-family:var(--latin);font-size:.72rem;letter-spacing:.24em;border:1px solid rgba(255,255,255,.45);padding:.4rem .8rem}
+.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:6px;cursor:pointer}
+.menu-toggle span{width:24px;height:1.5px;background:#fff}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:660px;display:flex;align-items:stretch;justify-content:center;
+  text-align:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/lux-hero-pool.jpg') center/cover no-repeat;
+  transform:scale(1.04);animation:zoom 22s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(31,27,20,.38) 0%,rgba(31,27,20,.12) 40%,rgba(31,27,20,.62) 100%)}
+.hero-inner{position:relative;z-index:2;padding:15vh 22px 7vh;width:100%;max-width:900px;display:flex;
+  flex-direction:column;justify-content:space-between;align-items:center;text-shadow:0 2px 20px rgba(0,0,0,.45)}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);color:#fff;letter-spacing:.18em}
+.hero .sub{font-family:var(--serif);font-size:clamp(1rem,2vw,1.25rem);letter-spacing:.3em;margin-top:1rem;opacity:.95}
+.hero-badge{display:inline-flex;align-items:center;gap:1.2rem;flex-wrap:wrap;justify-content:center;
+  font-size:.86rem;letter-spacing:.14em;border-top:1px solid rgba(255,255,255,.35);border-bottom:1px solid rgba(255,255,255,.35);
+  padding:.8rem 1.4rem;margin-bottom:2rem}
+.hero-badge b{font-family:var(--latin);font-size:1.3rem;font-weight:400;color:#fff}
+.hero-badge .star{color:var(--gold)}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+
+/* PROOF STRIP */
+.proof{background:var(--ink);color:var(--bg);padding:2.6rem 0}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;text-align:center}
+.proof-grid .n{font-family:var(--latin);font-size:2.2rem;color:var(--gold);line-height:1.1}
+.proof-grid .l{font-size:.82rem;letter-spacing:.2em;opacity:.8;margin-top:.4rem}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:3.4rem}
+.why{background:var(--cream);border:1px solid var(--line);padding:2.2rem 1.6rem;text-align:center}
+.why .ic{font-family:var(--serif);font-size:2rem;color:var(--terra);line-height:1}
+.why h3{font-size:1.25rem;margin:1rem 0 .5rem;letter-spacing:.12em}
+.why p{font-size:.9rem;color:var(--ink-soft);line-height:1.85}
+.why q{display:block;margin-top:1rem;font-family:var(--serif);font-size:.86rem;color:var(--ink-mute);quotes:"“" "”"}
+
+/* REVIEWS */
+.reviews{background:var(--bg-soft)}
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:3.4rem}
+.rv{background:var(--cream);border:1px solid var(--line);padding:2.2rem 2rem;box-shadow:var(--shadow);position:relative}
+.rv:before{content:"“";position:absolute;top:.4rem;left:1.2rem;font-family:var(--serif);font-size:4rem;color:var(--sand,#D9CCB3);line-height:1;color:rgba(184,106,77,.22)}
+.rv .stars{color:var(--gold);letter-spacing:.2em;font-size:.9rem}
+.rv p{font-family:var(--serif);font-size:1.12rem;line-height:1.95;margin:.8rem 0 1.2rem;color:var(--ink)}
+.rv .who{font-size:.8rem;letter-spacing:.16em;color:var(--ink-mute)}
+.rv .who b{color:var(--ink);font-weight:500;margin-right:.6rem}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1.6rem}
+.rv-grid .rv{box-shadow:none;padding:1.8rem 1.6rem}
+.rv-grid .rv p{font-size:1rem}
+.rv-foot{text-align:center;margin-top:3rem}
+.rv-foot small{display:block;margin-top:1rem;font-size:.78rem;color:var(--ink-mute)}
+
+/* SPACES */
+.sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3.4rem}
+.sp img{width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow)}
+.sp h3{font-size:1.4rem;margin:1.3rem 0 .4rem;letter-spacing:.12em}
+.sp p{color:var(--ink-soft);font-size:.95rem}
+
+/* SERVICES */
+.services{background:var(--ink);color:var(--bg)}
+.services .section-title{color:var(--bg)}
+.services .lead{color:rgba(246,237,221,.75)}
+.services .divider{background:var(--gold)}
+.services .eyebrow{color:var(--gold)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.2rem;border-top:1px solid rgba(255,255,255,.1)}
+.svc{padding:1.8rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.svc h3{color:var(--bg);font-size:1.15rem;letter-spacing:.14em}
+.svc p{font-size:.88rem;color:rgba(246,237,221,.68);margin-top:.4rem}
+.svc .tag{font-size:.72rem;color:var(--gold);letter-spacing:.14em;margin-left:.5rem}
+
+/* LOCATION */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;margin-top:3rem}
+.loc-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow)}
+.loc-list{margin-top:1.6rem}
+.loc-list div{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:.75rem 0;font-size:.95rem}
+.loc-list span:last-child{color:var(--terra);font-family:var(--serif)}
+.loc-btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+.loc-btns .btn{padding:.8rem 1.4rem;font-size:.84rem}
+
+/* BOOK */
+.book{background:url('images/lux-story-twilight.jpg') center/cover no-repeat;position:relative}
+.book:before{content:"";position:absolute;inset:0;background:rgba(31,27,20,.78)}
+.book .wrap{position:relative;z-index:2}
+.book .section-title,.book .lead{color:var(--bg)}
+.book .lead{color:rgba(246,237,221,.8)}
+.book .eyebrow{color:var(--gold)}
+.book .divider{background:var(--gold)}
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.2rem}
+.way{background:var(--bg);padding:2.4rem 1.8rem;text-align:center;display:flex;flex-direction:column;align-items:center}
+.way .num{font-family:var(--latin);font-size:.8rem;letter-spacing:.3em;color:var(--terra)}
+.way h3{font-size:1.4rem;margin:.6rem 0 .5rem;letter-spacing:.12em}
+.way p{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.4rem;flex:1}
+.way .btn{width:100%}
+.qr{width:150px;height:150px;border:1px solid var(--line);background:var(--cream);margin:0 auto 1rem;
+  display:flex;align-items:center;justify-content:center;font-size:.78rem;color:var(--ink-mute);text-align:center;padding:.6rem}
+.qr img{width:100%;height:100%;object-fit:contain}
+.wxid{font-family:var(--latin);font-size:1rem;letter-spacing:.08em;margin-bottom:1rem;color:var(--ink)}
+.copied{font-size:.78rem;color:var(--terra);height:1.2em}
+
+footer{background:#16130d;color:rgba(246,237,221,.6);padding:3rem 0 2.2rem;text-align:center;font-size:.85rem}
+footer .brand{display:inline-block;margin-bottom:1rem}
+footer a{color:var(--gold)}
+
+.fab{position:fixed;bottom:22px;right:22px;z-index:80;width:46px;height:46px;border-radius:50%;
+  background:#07C160;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.45);
+  color:#fff;font-size:.8rem;letter-spacing:.05em}
+
+@media(max-width:980px){
+  .why-grid{grid-template-columns:1fr 1fr}
+  .featured,.sp-grid,.loc-grid,.ways{grid-template-columns:1fr}
+  .rv-grid,.svc-grid{grid-template-columns:1fr 1fr}
+  .proof-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .navlinks{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:var(--bg);flex-direction:column;
+    align-items:flex-start;justify-content:center;gap:1.6rem;padding:3rem;transform:translateX(100%);transition:.45s;box-shadow:var(--shadow)}
+  .navlinks.show{transform:none}
+  .navlinks a{color:var(--ink)!important}
+  .navlinks .lang{border-color:var(--ink)}
+  .menu-toggle{display:flex;z-index:70}
+}
+@media(max-width:560px){
+  .wrap{padding:0 20px}
+  .why-grid,.rv-grid,.svc-grid{grid-template-columns:1fr}
+  .hero h1{letter-spacing:.1em}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand">Villa&nbsp;Home<small>巴厘岛 · 巴图贝利格</small></a>
+  <nav class="navlinks" id="navlinks">
+    <a href="#reviews">住客评价</a>
+    <a href="#spaces">别墅空间</a>
+    <a href="#services">贴心服务</a>
+    <a href="#location">位置</a>
+    <a href="#book">预订咨询</a>
+    <a href="index.html" class="lang">EN</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <h1>巴厘岛私享柚木别墅</h1>
+      <p class="sub">十六米泳池 · 热带花园 · 步行五分钟到海滩</p>
+    </div>
+    <div>
+      <div class="hero-badge">
+        <span>Airbnb <b>4.94</b> <span class="star">★</span></span>
+        <span>151 条评价</span>
+        <span>中文住客 <b>11</b> 条 · 全部五星</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#book" class="btn btn-terra">微信咨询预订</a>
+        <a href="#reviews" class="btn btn-ghost">看看住客怎么说</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<section class="proof">
+  <div class="wrap proof-grid">
+    <div><div class="n">4.94★</div><div class="l">Airbnb 综合评分</div></div>
+    <div><div class="n">95%</div><div class="l">评价为五星</div></div>
+    <div><div class="n">5.0</div><div class="l">清洁 · 沟通 · 入住</div></div>
+    <div><div class="n">9</div><div class="l">最多可住人数</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="pad">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">为什么选择我们<span class="en">Why guests return</span></p>
+      <h2 class="section-title">中国住客最喜欢的四件事</h2>
+      <span class="divider"></span>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal"><div class="ic">管</div><h3>专属管家</h3><p>管家、厨师、清洁和园丁团队每天照料别墅。抵达时备好冰饮，有任何需要随时响应。</p><q>管家挺贴心的，刚到就给备了凉饮</q></div>
+      <div class="why reveal"><div class="ic">厨</div><h3>私厨早餐</h3><p>私人厨师在别墅为您现做早餐，晚餐也可预约（另付费）。</p><q>预定的早饭也非常美味，无可挑剔</q></div>
+      <div class="why reveal"><div class="ic">池</div><h3>十六米泳池</h3><p>一千二百平米热带花园中的私人泳池，配有日光躺椅和遮阳伞。</p><q>哪怕一天哪里都不去，也可以享受无敌的泳池</q></div>
+      <div class="why reveal"><div class="ic">木</div><h3>传统柚木建筑</h3><p>手工柚木 Joglo 凉亭、雕花穹顶卧室、赤陶色灰泥浴室——每一处都是巴厘岛工艺。</p><q>无与伦比的建筑设计</q></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="pad reviews" id="reviews">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">住客评价<span class="en">Guest reviews</span></p>
+      <h2 class="section-title">来自中国住客的真实评价</h2>
+      <span class="divider"></span>
+      <p class="lead">以下评价均摘自 Airbnb，保留住客原文。</p>
+    </div>
+
+    <div class="featured">
+      <div class="rv reveal">
+        <div class="stars">★★★★★</div>
+        <p>绝对会是你在巴厘岛的一段美好时光。酒店团队非常专业，有厨师有打扫卫生的有园丁有管家，他们把房间收拾的非常舒服，每一个人都很负责。预定的早饭也非常美味，无可挑剔，完美。</p>
+        <div class="who"><b>蕾</b>2026年8月 · Airbnb</div>
+      </div>
+      <div class="rv reveal">
+        <div class="stars">★★★★★</div>
+        <p>他的CP值非常的高，而且管家的服務非常的貼心，及時的可以協助你問題的解決，貼心的當天幫我們預訂了生日蛋糕，廚師的廚藝也非常好早餐的素質也非常好非常用心的準備，我們將會給更多的朋友分享這樣的訊息。</p>
+        <div class="who"><b>佩玲</b>2025年12月 · Airbnb</div>
+      </div>
+    </div>
+
+    <div class="rv-grid">
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>挺好的 跟图片差不多 管家挺贴心的 刚到就给备了凉饮 很新鲜 泳池晚上温度刚刚好 朋友们都玩的很开心🥳 每天都会把房间和室外 泳池都清理好 很舒服</p><div class="who"><b>Liya</b>2026年4月</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>这次巴厘岛非常棒的一个民宿体验 哪怕一天哪里都不去 也可以在这个别墅里享受 无敌的泳池 和贴心的服务</p><div class="who"><b>Bubu</b>2026年1月</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>无与伦比的建筑设计，漂亮的泳池，非常大的活动空间，今后到巴厘岛的首选住宿</p><div class="who"><b>Chen</b>2024年5月</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>花园和泳池真的很大，员工清扫也很及时，经理回复速度很快，服务很赞，上门SPA不错。</p><div class="who"><b>Jing</b>2024年6月</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>非常不错！很漂亮！我很喜欢！</p><div class="who"><b>鑫</b>2026年10月</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>一次非常愉悦的住宿体验！</p><div class="who"><b>诗佳</b>2026年5月</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>很不错 管家很热情</p><div class="who"><b>家慧</b>2025年12月</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>Great value for money, beautiful environment, big place.</p><div class="who"><b>珈玮</b>2025年3月</div></div>
+      <div class="rv reveal"><div class="stars">★★★★★</div><p>不错的体验，性价比很高，玩的很开心。</p><div class="who"><b>先生</b>2020年1月</div></div>
+    </div>
+
+    <div class="rv-foot reveal">
+      <a href="https://www.airbnb.com/rooms/9251415" target="_blank" rel="noopener" class="btn btn-outline">在 Airbnb 查看全部 151 条评价</a>
+      <small>Airbnb 评分 4.94 · 截至2026年10月</small>
+    </div>
+  </div>
+</section>
+
+<!-- SPACES -->
+<section class="pad" id="spaces">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">别墅空间<span class="en">The villa</span></p>
+      <h2 class="section-title">三间卧室 · 最多可住九人</h2>
+      <span class="divider"></span>
+      <p class="lead">适合家庭、朋友结伴出游，私密且宽敞。</p>
+    </div>
+    <div class="sp-grid">
+      <div class="sp reveal"><img src="images/lux-pool-deck.jpg" alt="泳池与柚木露台" loading="lazy"/><h3>泳池与花园</h3><p>十六米私人泳池，一千二百平米热带花园，日光躺椅与遮阳伞。</p></div>
+      <div class="sp reveal"><img src="images/lux-pavilion.jpg" alt="开放式凉亭客厅" loading="lazy"/><h3>开放式凉亭客厅</h3><p>手工雕花柚木屋顶下的户外客厅与餐厅，面朝泳池与花园。</p></div>
+      <div class="sp reveal"><img src="images/lux-bedroom-poolview.jpg" alt="泳池景观卧室" loading="lazy"/><h3>三间套房卧室</h3><p>均带独立卫浴和空调，柚木穹顶，其中一间直通泳池。加床后最多可住九人。</p></div>
+      <div class="sp reveal"><img src="images/lux-bathroom-terracotta.jpg" alt="赤陶色浴室" loading="lazy"/><h3>赤陶色浴室</h3><p>手工灰泥墙面、古董镶贝镜、石制洗手盆，部分配有户外雨林花洒。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="pad services" id="services">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">贴心服务<span class="en">Services</span></p>
+      <h2 class="section-title">像在家一样被照顾</h2>
+      <span class="divider"></span>
+      <p class="lead">入住前通过微信告诉我们您的需求，我们提前安排好。</p>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc"><h3>管家服务</h3><p>入住期间全程协助，回复迅速。</p></div>
+      <div class="svc"><h3>每日清洁</h3><p>房间、户外区域与泳池每天打扫。</p></div>
+      <div class="svc"><h3>私厨早餐<span class="tag">可预约</span></h3><p>厨师在别墅现做早餐。</p></div>
+      <div class="svc"><h3>私厨晚餐<span class="tag">另付费</span></h3><p>印尼菜、西餐均可安排。</p></div>
+      <div class="svc"><h3>上门 SPA<span class="tag">另付费</span></h3><p>巴厘岛传统按摩在别墅进行。</p></div>
+      <div class="svc"><h3>生日与纪念日<span class="tag">可安排</span></h3><p>蛋糕、布置，给家人朋友惊喜。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="pad" id="location">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">位置<span class="en">Location</span></p>
+      <h2 class="section-title">巴图贝利格 · 克罗博坎</h2>
+      <span class="divider"></span>
+    </div>
+    <div class="loc-grid">
+      <div class="reveal">
+        <p class="lead">别墅位于水明漾（Seminyak）与长谷（Canggu）之间安静的海边街区 Batu Belig。步行即可到海滩，几分钟车程就是巴厘岛最好的餐厅、海滩俱乐部和冲浪点。</p>
+        <div class="loc-list">
+          <div><span>Batu Belig 海滩</span><span>步行约5分钟</span></div>
+          <div><span>水明漾 Seminyak</span><span>车程约10分钟</span></div>
+          <div><span>长谷 Canggu</span><span>车程约15分钟</span></div>
+          <div><span>巴厘岛机场 DPS</span><span>车程约30分钟</span></div>
+        </div>
+        <div class="loc-btns">
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=115.1497395,-8.6710929&name=Villa%20Home%20Bali">高德地图打开</a>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://maps.app.goo.gl/D2A5r18poJ1RupXJ9">Google 地图</a>
+        </div>
+      </div>
+      <div class="reveal"><img src="images/lux-story-twilight.jpg" alt="Villa Home 夜景" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="pad book" id="book">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow">预订咨询<span class="en">Book</span></p>
+      <h2 class="section-title">三种方式，任您选择</h2>
+      <span class="divider"></span>
+      <p class="lead">直接联系我们可享更灵活的安排，我们会亲自确认您的日期与价格。</p>
+    </div>
+    <div class="ways">
+      <div class="way reveal">
+        <div class="num">01</div><h3>微信咨询</h3>
+        <div class="qr" id="qrBox"><img src="images/wechat-qr.jpg" alt="微信二维码" onerror="this.parentNode.textContent='微信二维码'"/></div>
+        <div class="wxid" id="wxId">WeChat ID</div>
+        <button class="btn btn-terra" id="copyWx">复制微信号</button>
+        <div class="copied" id="copied"></div>
+      </div>
+      <div class="way reveal">
+        <div class="num">02</div><h3>Airbnb 预订</h3>
+        <p>在 Airbnb 查看实时房态并直接下单，平台保障，放心预订。</p>
+        <a class="btn btn-outline" href="https://www.airbnb.com/rooms/9251415" target="_blank" rel="noopener">前往 Airbnb</a>
+      </div>
+      <div class="way reveal">
+        <div class="num">03</div><h3>WhatsApp</h3>
+        <p>已经在巴厘岛或使用国际网络？也可以通过 WhatsApp 联系我们。</p>
+        <a class="btn btn-outline" id="waBtn" href="#" target="_blank" rel="noopener">WhatsApp 联系</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Villa&nbsp;Home<small>巴厘岛 · 巴图贝利格</small></div>
+    <p>巴厘岛私享柚木别墅 · Batu Belig, Kerobokan, Bali</p>
+    <p style="margin-top:.6rem"><a href="index.html">English</a></p>
+    <p style="margin-top:1.4rem;font-size:.72rem;opacity:.5">© <span id="yr"></span> Villa Home Bali</p>
+  </div>
+</footer>
+
+<a class="fab" href="#book" aria-label="微信咨询">微信</a>
+
+<script>
+/* ===== Edit these two values ===== */
+const WECHAT_ID = 'Home_villa_Bali';               // e.g. 'villahome_bali'  — your WeChat ID
+const WHATSAPP  = '+62 819 1636 2285';
+/* ================================= */
+const $=s=>document.querySelector(s);
+const wa='https://wa.me/'+WHATSAPP.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent('您好，我想咨询 Villa Home 的入住日期。');
+$('#waBtn').href=wa;
+$('#wxId').textContent = WECHAT_ID ? '微信号：'+WECHAT_ID : '微信号即将更新';
+$('#copyWx').onclick=async()=>{
+  if(!WECHAT_ID){ $('#copied').textContent='请扫描二维码添加'; return; }
+  try{ await navigator.clipboard.writeText(WECHAT_ID); $('#copied').textContent='已复制，打开微信添加好友即可'; }
+  catch(e){ $('#copied').textContent='微信号：'+WECHAT_ID; }
+};
+const nav=$('#nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+$('#menuToggle').onclick=()=>$('#navlinks').classList.toggle('show');
+document.querySelectorAll('#navlinks a').forEach(a=>a.onclick=()=>$('#navlinks').classList.remove('show'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+$('#yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
